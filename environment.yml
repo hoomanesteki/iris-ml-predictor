@@ -1,0 +1,9 @@
+name: 522-iris
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - matplotlib
+  - pandas
+  - jupyterlab
