@@ -1,0 +1,42 @@
+name: 522-iris
+channels:
+  - conda-forge
+  - pytorch
+  - anaconda
+  - plotly
+  - defaults
+dependencies:
+  - python==3.13.5
+  - numpy
+  - jupyterlab
+  - seaborn
+  - ipykernel
+  - matplotlib
+  - pandas
+  - nb_conda_kernels
+  - scikit-learn
+  - requests
+  - ipython
+  - graphviz
+  - python-graphviz
+  - jinja2
+  - lightgbm
+  - torchvision
+  - torchaudio
+  - pytorch
+  - autograd
+  - plotly
+  - panel
+  - watchfiles
+  - altair-all
+  - vega_datasets
+  - pip
+  - pip:
+      - mglearn
+      - otter-grader
+      - graphviz
+      - nbformat
+      - nbclient
+      - transformers
+      - datasets
+      - psutil
