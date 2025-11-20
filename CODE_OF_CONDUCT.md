@@ -47,7 +47,7 @@ Project maintainers have the right and responsibility to remove, edit, or reject
 The project maintainers will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
 
 #### Minor --> A private, written warning from project maintainers, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate.
-#### Moderate --> A temporary ban from any project spaces for a specified period (e.g., one week), with no public or private interaction with project participants allowed during this period.
+#### Moderate --> A temporary ban from any project spaces for one week, with no public or private interaction with project participants allowed during this period.
 #### Severe --> A permanent ban from any project spaces, including removal from the project's organization and prevention from future contribution
 
 ## 6. Reporting Guidelines
