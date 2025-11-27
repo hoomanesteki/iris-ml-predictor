@@ -1,4 +1,5 @@
-FROM quay.io/jupyter/minimal-notebook:2024-11-19
+# FROM quay.io/jupyter/minimal-notebook:2024-11-19
+FROM condaforge/miniforge3:latest
 
 # Set working directory
 WORKDIR /home/jovyan/work
@@ -11,13 +12,6 @@ RUN mamba install -y conda-lock
 
 # Create environment using conda-lock
 RUN conda-lock install --name iris-env /tmp/conda-lock.yml
-
-# Activate environment and install pip dependencies (PyTorch, LightGBM)
-RUN /opt/conda/envs/iris-env/bin/pip install \
-    torch==2.3.0 \
-    torchvision==0.18.0 \
-    torchaudio==2.3.0 \
-    lightgbm==4.3.0
 
 # Set iris-env as default
 ENV CONDA_DEFAULT_ENV=iris-env
