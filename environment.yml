@@ -23,4 +23,9 @@ dependencies:
   - panel
   - watchfiles
   - ucimlrepo
-  - conda-lock=>3.0.4
+  - conda-lock = 3.0.4
+  - pointblank
+  - pip:
+    - deepchecks
+    - vegafusion
+
