@@ -17,20 +17,11 @@ Fisher, R. (1936). Iris [Dataset]. UCI Machine Learning Repository. https://doi.
 
 ## Setup
 
-To setup, please clone this repository from Github onto your computer.
+There are 2 options to work with this repository
 
-The dependencies and packages needed to run this project successfully can be installed by running 
-the following code blocks sequentially in your terminal.
+### Option 1 (recommended): Download image container from docker
 
-```bash
-conda env create -f environment.yml
-conda activate 522-iris
-```
-
-Once done, please navigate to `iris_summary.ipynb` and run all cells.
-
-
-## 🐳 Container Usage
+#### 🐳 Container Usage
 
 This project provides a fully reproducible Docker environment using:
 
@@ -44,15 +35,15 @@ Using the Docker container ensures consistent dependencies across all platforms.
 
 ---
 
-### Pull the Docker image
+#### Pull the Docker image
 
 ```bash
-docker pull esteki/iris-ml-predictor:latest
+docker pull esteki/iris-ml-predictor:latest # change later
 ```
 
 Note: This action may take up to 5 mins to complete.
 
-### 2. Run the Docker container
+#### Run the Docker container
 
 ```bash
 docker run -it --rm \
@@ -60,6 +51,23 @@ docker run -it --rm \
   -v "$(pwd)":/home/jovyan/work \
   esteki/iris-ml-predictor:latest
 ```
+
+## Option 2 - Clone locally using conda-lock
+
+To setup, clone this repository from Github onto your computer.
+
+The dependencies and packages needed to run this project successfully can be installed by running 
+the following code blocks sequentially in your terminal.
+
+```bash
+
+conda-lock install --name condalock-new conda-lock.yml
+
+conda env create -f environment.yml
+conda activate 522-iris
+```
+
+Once done, please navigate to `iris_summary.ipynb` and run all cells.
 
 ## License
 
