@@ -1,6 +1,5 @@
 name: 522-iris
 channels:
-  - pytorch
   - conda-forge
   - defaults
 
@@ -24,8 +23,4 @@ dependencies:
   - panel
   - watchfiles
   - ucimlrepo
-  - pip:
-      - lightgbm==4.3.0
-      - torch==2.3.0
-      - torchvision==0.18.0
-      - torchaudio==2.3.0
+  - conda-lock=>3.0.4
