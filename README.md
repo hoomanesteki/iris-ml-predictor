@@ -60,6 +60,7 @@ The dependencies and packages needed to run this project successfully can be ins
 the following code blocks sequentially in your terminal.
 
 ```bash
+conda install -c conda-forge conda-lock -y
 
 conda-lock install --name condalock-new conda-lock.yml
 
