@@ -30,7 +30,7 @@ conda activate 522-iris
 Once done, please navigate to `iris_summary.ipynb` and run all cells.
 
 
-## 🐳 Container Usage (Milestone 2)
+## 🐳 Container Usage
 
 This project provides a fully reproducible Docker environment using:
 
