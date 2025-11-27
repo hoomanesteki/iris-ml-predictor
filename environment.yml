@@ -23,8 +23,9 @@ dependencies:
   - panel
   - watchfiles
   - ucimlrepo
+  - conda-lock = 3.0.4
+  - pointblank
   - pip:
-      - lightgbm==4.3.0
-      - torch==2.3.0
-      - torchvision==0.18.0
-      - torchaudio==2.3.0
+    - deepchecks
+    - vegafusion
+
