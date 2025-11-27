@@ -3,8 +3,8 @@ FROM quay.io/jupyter/minimal-notebook:2024-11-19
 # Set working directory
 WORKDIR /home/jovyan/work
 
-# Copy lock files
-COPY conda-lock.linux-64.yml /tmp/conda-lock.yml
+# Copy lock file
+COPY conda-lock.yml /tmp/conda-lock.yml
 
 # Install conda-lock
 RUN mamba install -y conda-lock
