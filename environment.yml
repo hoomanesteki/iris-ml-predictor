@@ -1,5 +1,6 @@
 name: 522-iris
 channels:
+  - pytorch
   - conda-forge
   - defaults
 
