@@ -26,5 +26,5 @@ ENV PATH="/opt/conda/envs/iris-env/bin:${PATH}"
 # Jupyter kernel
 RUN python -m ipykernel install --user --name=iris-env --display-name "Iris ML Env"
 
-# Copy project files
+# Copy project files.
 COPY . .
