@@ -30,6 +30,35 @@ conda activate 522-iris
 Once done, please navigate to `iris_summary.ipynb` and run all cells.
 
 
+## 🐳 Container Usage (Milestone 2)
+
+This project provides a fully reproducible Docker environment using:
+
+- `environment.yml`
+- `conda-lock.yml`
+- `Dockerfile`
+- GitHub Actions automated builds
+- DockerHub publishing
+
+Using the Docker container ensures consistent dependencies across all platforms.
+
+---
+
+### Pull the Docker image**
+
+```bash
+docker pull esteki/iris-ml-predictor:latest
+
+### 2. Run the Docker container
+
+```bash
+docker run -it --rm \
+  -p 8888:8888 \
+  -v "$(pwd)":/home/jovyan/work \
+  esteki/iris-ml-predictor:latest
+
+
+
 ## License
 
 MIT License
