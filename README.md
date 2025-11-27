@@ -48,7 +48,7 @@ Using the Docker container ensures consistent dependencies across all platforms.
 
 ```bash
 docker pull esteki/iris-ml-predictor:latest
-
+```
 ### 2. Run the Docker container
 
 ```bash
