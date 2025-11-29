@@ -14,8 +14,8 @@ version: 1
 metadata:
   content_hash:
     linux-64: d54f11a9eca3b4a9623c1cd53699f8a70c013d0614c2cd90af5919c863c805f6
-    osx-arm64: b1c479795b8daa36c22c79b3381308d783590b3742182ce0b45d4e2a1ccd3bcd
     osx-64: 43f749e8ad029bc4e1da7bda3a0f00cc4fa7aa04a54065a8fbbad961630282b5
+    osx-arm64: b1c479795b8daa36c22c79b3381308d783590b3742182ce0b45d4e2a1ccd3bcd
     win-64: 23b50d6756afe56462f20c3235c027fc3e2346e184432e2058c889aa18b1e1b7
     linux-aarch64: a16167d24bb8de4d848a32b5e04aa09689a35d991f858d951657b10da262dd90
   channels:
@@ -13286,7 +13286,6 @@ package:
     libzlib: '>=1.3.1,<2.0a0'
     ncurses: '>=6.5,<7.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     readline: '>=8.2,<9.0a0'
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
@@ -13314,7 +13313,6 @@ package:
     libzlib: '>=1.3.1,<2.0a0'
     ncurses: '>=6.5,<7.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     readline: '>=8.2,<9.0a0'
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
@@ -13338,7 +13336,6 @@ package:
     libzlib: '>=1.3.1,<2.0a0'
     ncurses: '>=6.5,<7.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     readline: '>=8.2,<9.0a0'
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
@@ -13362,7 +13359,6 @@ package:
     libzlib: '>=1.3.1,<2.0a0'
     ncurses: '>=6.5,<7.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     readline: '>=8.2,<9.0a0'
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
@@ -13384,7 +13380,6 @@ package:
     libsqlite: '>=3.50.4,<4.0a0'
     libzlib: '>=1.3.1,<2.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
     ucrt: '>=10.0.20348.0'

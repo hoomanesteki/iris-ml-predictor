@@ -8,20 +8,20 @@ SHELL ["/bin/bash", "-c"]
 WORKDIR /home/jovyan/work
 
 # Copy repository contents (includes conda-lock.yml)
-COPY . .
+COPY conda-lock.yml .
 
 # Install conda-lock + mamba
-RUN mamba install -y mamba conda-lock
+RUN mamba install -y conda-lock
 
 # Create environment from lockfile (Docker will pick linux-64)
-RUN conda-lock install --name iris-env conda-lock.yml
+RUN conda-lock install --name 522-iris conda-lock.yml
 
 # Activate environment by default
-ENV CONDA_DEFAULT_ENV=iris-env
-ENV PATH="/opt/conda/envs/iris-env/bin:${PATH}"
+ENV CONDA_DEFAULT_ENV=522-iris
+ENV PATH="/opt/conda/envs/522-iris/bin:${PATH}"
 
 # Install Jupyter kernel
-RUN python -m ipykernel install --user --name=iris-env --display-name="Iris ML Env"
+RUN python -m ipykernel install --user --name=522-iris --display-name="522-iris"
 
 # Expose Jupyter port
 EXPOSE 8888

@@ -30,7 +30,7 @@ env: ## remove previous and create environment from lock file
 
 .PHONY: build
 build: ## build the docker image from the Dockerfile
-	docker build -t 522-iris --file Dockerfile .
+	docker build -t esteki/iris-ml-predictor:1.0.0 --file Dockerfile .
 
 .PHONY: run
 run: ## alias for the up target
@@ -40,7 +40,7 @@ run: ## alias for the up target
 up: ## stop and start docker-compose services
 	# by default stop everything before re-creating
 	make stop
-	docker-compose up -d
+	docker-compose up
 
 .PHONY: stop
 stop: ## stop docker-compose services

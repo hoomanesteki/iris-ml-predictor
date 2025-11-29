@@ -36,7 +36,7 @@ docker compose down
 
 #### Pull:
 ```bash
-docker pull esteki/iris-ml-predictor:latest
+docker pull esteki/iris-ml-predictor:1.0.0
 ```
 
 #### Run:
@@ -44,7 +44,7 @@ docker pull esteki/iris-ml-predictor:latest
 docker run -it --rm \
   -p 8888:8888 \
   -v "$(pwd)":/home/jovyan/work \
-  esteki/iris-ml-predictor:latest
+  esteki/iris-ml-predictor:1.0.0
 ```
 
 ### Option 3:  Local setup using conda-lock
