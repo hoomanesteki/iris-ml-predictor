@@ -1,42 +1,30 @@
 name: 522-iris
+
 channels:
   - conda-forge
-  - pytorch
-  - anaconda
-  - plotly
   - defaults
+
 dependencies:
-  - python==3.13.5
-  - numpy
-  - jupyterlab
-  - seaborn
-  - ipykernel
-  - matplotlib
-  - pandas
-  - nb_conda_kernels
-  - scikit-learn
-  - requests
-  - ipython
-  - graphviz
-  - python-graphviz
-  - jinja2
-  - lightgbm
-  - torchvision
-  - torchaudio
-  - pytorch
-  - autograd
-  - plotly
-  - panel
-  - watchfiles
-  - altair-all
-  - vega_datasets
-  - pip
+  # Core scientific stack
+  - python=3.11
+  - numpy=1.26.*
+  - pandas=2.2.*
+  - scikit-learn=1.5.*
+  - matplotlib=3.8.*
+  - seaborn=0.13.*
+  - requests=2.*
+
+  # Jupyter ecosystem
+  - ipykernel=6.*
+  - jupyterlab=4.*
+  - nb_conda_kernels=2.*
+
+  # Tools
+  - pip=24.*
+  - conda-lock=3.0.4
+
+  # Pip-only packages
   - pip:
-      - mglearn
-      - otter-grader
-      - graphviz
-      - nbformat
-      - nbclient
-      - transformers
-      - datasets
-      - psutil
+      - pointblank==0.6.1
+      - narwhals<2.0.0
+      - ucimlrepo==0.0.6
