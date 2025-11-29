@@ -1,0 +1,12 @@
+services:
+  iris:
+    image: esteki/iris-ml-predictor:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    command: >
+      jupyter lab
+      --ip=0.0.0.0
+      --no-browser
+      --allow-root
