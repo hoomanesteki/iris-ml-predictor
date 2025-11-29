@@ -17,34 +17,29 @@ Fisher, R. (1936). Iris [Dataset]. UCI Machine Learning Repository. https://doi.
 
 ## Setup
 
-There are 2 options to work with this repository
+There are 3 recommended ways to work with this repository:
 
-### Option 1 (recommended): Download image container from docker
+### Option 1 (recommended): Run using Docker Compose 🐳
+Use Docker Compose to easily reproduce and run the environment. To start:
 
-#### 🐳 Container Usage
-
-This project provides a fully reproducible Docker environment using:
-
-- `environment.yml`
-- `conda-lock.yml`
-- `Dockerfile`
-- GitHub Actions automated builds
-- DockerHub publishing
-
-Using the Docker container ensures consistent dependencies across all platforms.
-
----
-
-#### Pull the Docker image
-
+#### Start:
 ```bash
-docker pull esteki/iris-ml-predictor:latest # change later
+docker compose up
 ```
 
-Note: This action may take up to 5 mins to complete.
+#### Stop:
+```bash
+docker compose down
+```
 
-#### Run the Docker container
+### Option 2: Run the pre-build container from Dockerhub 🐳 
 
+#### Pull:
+```bash
+docker pull esteki/iris-ml-predictor:latest
+```
+
+#### Run:
 ```bash
 docker run -it --rm \
   -p 8888:8888 \
@@ -52,23 +47,24 @@ docker run -it --rm \
   esteki/iris-ml-predictor:latest
 ```
 
-## Option 2 - Clone locally using conda-lock
+### Option 3:  Local setup using conda-lock
 
-To setup, clone this repository from Github onto your computer.
 
-The dependencies and packages needed to run this project successfully can be installed by running 
-the following code blocks sequentially in your terminal.
+#### Install dependencies:
 
 ```bash
 conda install -c conda-forge conda-lock -y
+```
 
-conda-lock install --name condalock-new conda-lock.yml
+#### Create environment:
 
-conda env create -f environment.yml
+```bash
+conda-lock install --name 522-iris conda-lock.yml
 conda activate 522-iris
 ```
 
-Once done, please navigate to `iris_summary.ipynb` and run all cells.
+Once done, please navigate to `notebooks/iris_summary.ipynb` and run all cells.
+
 
 ## License
 
