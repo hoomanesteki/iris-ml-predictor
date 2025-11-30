@@ -24,12 +24,13 @@ Use Docker Compose to easily reproduce and run the environment. To start:
 
 #### Start:
 ```bash
-docker compose up
+make build
+make up
 ```
 
 #### Stop:
 ```bash
-docker compose down
+make stop
 ```
 
 ### Option 2:  Local setup using conda-lock
