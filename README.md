@@ -32,22 +32,7 @@ docker compose up
 docker compose down
 ```
 
-### Option 2: Run the pre-build container from Dockerhub 🐳 
-
-#### Pull:
-```bash
-docker pull esteki/iris-ml-predictor:1.0.0
-```
-
-#### Run:
-```bash
-docker run -it --rm \
-  -p 8888:8888 \
-  -v "$(pwd)":/home/jovyan/work \
-  esteki/iris-ml-predictor:1.0.0
-```
-
-### Option 3:  Local setup using conda-lock
+### Option 2:  Local setup using conda-lock
 
 
 #### Install dependencies:
