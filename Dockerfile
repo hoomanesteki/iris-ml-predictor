@@ -1,24 +1,30 @@
-# FROM quay.io/jupyter/minimal-notebook:2024-11-19
+# Base image (good choice)
 FROM condaforge/miniforge3:latest
+
+# Ensure bash is default shell for conda activation
+SHELL ["/bin/bash", "-c"]
 
 # Set working directory
 WORKDIR /home/jovyan/work
 
-# Copy lock file
-COPY conda-lock.yml /tmp/conda-lock.yml
+# Copy repository contents (includes conda-lock.yml)
+COPY conda-lock.yml .
 
-# Install conda-lock
+# Install conda-lock + mamba
 RUN mamba install -y conda-lock
 
-# Create environment using conda-lock
-RUN conda-lock install --name iris-env /tmp/conda-lock.yml
+# Create environment from lockfile (Docker will pick linux-64)
+RUN conda-lock install --name 522-iris conda-lock.yml
 
-# Set iris-env as default
-ENV CONDA_DEFAULT_ENV=iris-env
-ENV PATH="/opt/conda/envs/iris-env/bin:${PATH}"
+# Activate environment by default
+ENV CONDA_DEFAULT_ENV=522-iris
+ENV PATH="/opt/conda/envs/522-iris/bin:${PATH}"
 
-# Jupyter kernel
-RUN python -m ipykernel install --user --name=iris-env --display-name "Iris ML Env"
+# Install Jupyter kernel
+RUN python -m ipykernel install --user --name=522-iris --display-name="522-iris"
 
-# Copy project files.
-COPY . .
+# Expose Jupyter port
+EXPOSE 8888
+
+# Default command: JupyterLab
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
