@@ -17,7 +17,7 @@ Fisher, R. (1936). Iris [Dataset]. UCI Machine Learning Repository. https://doi.
 
 ## Setup
 
-There are 3 recommended ways to work with this repository:
+There are 2 recommended ways to work with this repository:
 
 ### Option 1 (recommended): Run using Docker Compose 🐳
 Use Docker Compose to easily reproduce and run the environment. To start:
