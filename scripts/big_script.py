@@ -7,6 +7,8 @@ from sklearn.dummy import DummyClassifier
 from sklearn.model_selection import train_test_split
 from ucimlrepo import fetch_ucirepo
 import pointblank as pb
+import click
+import os
 
 # fetch dataset 
 iris = fetch_ucirepo(id=53) 
@@ -58,7 +60,7 @@ test_score = tree.score(X_test, y_test)
 
 #Metric plots
 y_pred = tree.predict(X_test)
-print(classification_report(y_test, y_pred))
+class_report = classification_report(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred, labels=tree.classes_)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=tree.classes_)
-disp.plot()
+#disp.plot()
