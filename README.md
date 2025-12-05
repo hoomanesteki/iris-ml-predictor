@@ -75,3 +75,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+
+
+## Scripts for Running
+
+```bash
+python scripts/01data_import.py --url="https://archive.ics.uci.edu/static/public/53/iris.zip"  --write_to=data/raw 
+
+python scripts/02validation_splitting.py --raw_data=data/raw/iris.data --data_to=data --seed=522
+
+python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --plot_to=figures
+
+
+```
