@@ -95,12 +95,14 @@ The dummy classifier achieved an accuracy of 0.33 on the test set, which is expe
 
 With that in mind, lets fit a Decision Tree Classifier to our data.
 ```{python}
+#| label: tbl-metrics
+#| tbl-cap: Decision Tree Metrics
 metrics.style.set_table_styles([
     {'selector': 'th', 'props': [('background-color', '#f5f5f5')]}
 ])
 ```
 
-We see that the decision tree classifier achieves an accuracy of approximately `{python} accuracy`% on the test set, which is a significant improvement over the dummy classifier. This indicates that the decision tree model is able to effectively capture patterns in the data to make accurate predictions about the species of iris flowers based on their features.
+We see from @tbl-metrics that the decision tree classifier achieves an accuracy of approximately `{python} accuracy`% on the test set, which is a significant improvement over the dummy classifier. This indicates that the decision tree model is able to effectively capture patterns in the data to make accurate predictions about the species of iris flowers based on their features.
 
 ![Confusion matrix](../figures/confusion_matrix.png){#fig-conf}
 
