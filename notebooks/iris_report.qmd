@@ -28,7 +28,7 @@ metrics = pd.read_csv("../metrics/metrics_summary.csv")
 accuracy = round(metrics.iloc[0,0] * 100, 2)
 ```
 
-# Summary
+## Summary
 
 The present endeavor constructs a model that classifies iris flower species through the classic Iris dataset @iris_53. It was a four-dimensional feature set, which consisted of sepal length, sepal width, petal length, and petal width that was employed to get a Decision Tree Classifier. The model's performance was determined using a separate test set, and accuracy levels of `{python} accuracy`% were observed, which is quite a strong one.
 
@@ -105,6 +105,4 @@ In order to elevate the model’s power and generalization:
 
 ## References
 
-@dsci522_milestone  
-@dsci571_materials
 
