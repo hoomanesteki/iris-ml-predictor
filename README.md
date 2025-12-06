@@ -2,7 +2,7 @@
 
 - author Suryash Chakravarty, Hooman Esteki, Bright Arafat Bello
 
-## About
+## About:
 
 In this project we attempt to build a ML classifier to indentify certain flower species based 
 on the lengths and widths of petals and sepals. Our model can identify 3 main species of flowers- 
