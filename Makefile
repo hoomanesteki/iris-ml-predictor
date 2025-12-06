@@ -30,7 +30,7 @@ env: ## remove previous and create environment from lock file
 
 .PHONY: build
 build: ## build the docker image from the Dockerfile
-	docker build -t esteki/iris-ml-predictor:1.0.0 --file Dockerfile .
+	docker build -t esteki/iris-ml-predictor:latest --file Dockerfile .
 
 .PHONY: run
 run: ## alias for the up target

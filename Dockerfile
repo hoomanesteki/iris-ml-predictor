@@ -7,6 +7,13 @@ SHELL ["/bin/bash", "-c"]
 # Set working directory
 WORKDIR /home/jovyan/work
 
+# install curl and quarto standalone
+RUN apt-get update && \
+    apt-get install -y curl ca-certificates && \
+    curl -L -o quarto.deb https://quarto.org/download/latest/quarto-linux-amd64.deb && \
+    apt-get install -y ./quarto.deb && \
+    rm quarto.deb
+
 # Copy repository contents (includes conda-lock.yml)
 COPY conda-lock.yml .
 
@@ -22,10 +29,6 @@ ENV PATH="/opt/conda/envs/522-iris/bin:${PATH}"
 
 # Install Jupyter kernel
 RUN python -m ipykernel install --user --name=522-iris --display-name="522-iris"
-
-# patch fix for the quarto folder
-RUN mkdir -p /opt/conda/envs/522-iris/bin/tools/x86_64 && \
-    ln -sf /opt/conda/envs/522-iris/bin/deno /opt/conda/envs/522-iris/bin/tools/x86_64/deno
 
 # Expose Jupyter port
 EXPOSE 8888
