@@ -88,5 +88,7 @@ python scripts/02validation_splitting.py --raw_data=data/raw/iris.data --data_to
 
 python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --plot_to=figures
 
+python scripts/04model.py --training_data=data --model_to=model --seed=522
 
+python scripts/05metrics.py --test_data=data --model_from=model --metrics_to=metrics --plot_to=figures
 ```
