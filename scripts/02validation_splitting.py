@@ -12,11 +12,11 @@ from sklearn.model_selection import train_test_split
 
 def main(raw_data, data_to, seed):
     '''
-    Docstring for main
+    This function conducts a series of validation steps on the columns of iris.csv. It then splits the data into train and test based on a 80-20 split.
     
-    :param raw_data: Description
-    :param data_to: Description
-    :param seed: Description
+    :param raw_data: Path to directory where raw data is stored
+    :param data_to: Path to directory where validated and split data is to be saved
+    :param seed: Seed to be set for reproducibility
     '''
 
     colnames = [

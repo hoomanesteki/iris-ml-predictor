@@ -1,122 +1,110 @@
 ---
-title: "Flower Species Classification basesd on Iris Dataset"
+title: "Flower Species Classification Based on Iris Dataset"
 author: "Suryash Chakravarty, Hooman Esteki & Bright Arafat Bello"
+date: "2025/12/06"
+jupyter: python3
 format: 
-    html:
-        toc: true
-        toc-location: left-body
-    pdf:
-        toc: true
-        toc-location: left-body
+  html:
+    toc: true
+    toc-depth: 3
+  pdf:
+    toc: true
+    toc-depth: 3
 bibliography: references.bib
 execute:
   echo: false
   warning: false
-  message: false 
+  message: false
 editor: source
 ---
 
+GitHub URL: https://github.com/hoomanesteki/iris-ml-predictor
 
-
- Github URL: https://github.com/hoomanesteki/iris-ml-predictor
 ```{python}
 import pandas as pd
-import os
 from IPython.display import Markdown, display
-from sklearn.metrics import classification_report, ConfusionMatrixDisplay
-```
 
-
-```{python}
 metrics = pd.read_csv("../metrics/metrics_summary.csv")
-accuracy = round(metrics.iloc[0,0]*100,2)
+accuracy = round(metrics.iloc[0,0] * 100, 2)
 ```
 
-## Summary
+# Summary
 
-In this analysis we developed a classification model by utilizing the famous Iris dataset @iris_53. The features of the iris flowers: sepal length, sepal width, petal length, and petal width were the basis on which a Decision Tree Classifier was used for prediction. In order to check its performance, the model was first trained on one part of the dataset and then validated on another part (test set).
+The present endeavor constructs a model that classifies iris flower species through the classic Iris dataset @iris_53. It was a four-dimensional feature set, which consisted of sepal length, sepal width, petal length, and petal width that was employed to get a Decision Tree Classifier. The model's performance was determined using a separate test set, and accuracy levels of `{python} accuracy`% were observed, which is quite a strong one.
 
-The outcome of our model was quite impressive, as it reached a very high accuracy (`{python} accuracy`%) on the test set.
-
-The significance of this analysis is mainly associated with the Iris dataset which is considered to be one of the best datasets for introducing basic supervised learning concepts. It is easy but meaningful to see how numerical features can be used to separate different classes.
-
-On the other hand, one can’t ignore the limitations of this work as well. The size of the dataset (150 samples) is relatively small which could affect the generalization of our results over the whole population. Furthermore, only one model (DecisionTreeClassifier) was evaluated with very slight tuning; hence, if cross-validated model selection or advanced algorithms were used, better performance might be attained.
+The Iris dataset is often utilized for teaching machine learning because of its uncomplicated nature and distinct class structure. Nevertheless, the limitations of the small dataset containing 150 samples and the overlap of features between *versicolor* and *virginica* make it harder to generalize. Our model, regardless of these restrictions, still manages to exhibit high classification performance and serve as a robust baseline for multilabel prediction tasks.
 
 ## Introduction
 
-For this analysis, the Iris dataset was chosen, a well-known dataset in both machine learning and statistics. Iris flowers are the subjects of the dataset, which contains 150 samples. Each flower is represented by four attributes: sepal length, sepal width, petal length, and petal width. The species of the iris flower is the target variable, which can be one of three species: Iris setosa, Iris versicolor, or Iris virginica. 
+The 150 samples in the Iris dataset are determined by four numerical characteristics which together give the dimensions of the iris flowers. The target variable consists of three species: *Iris setosa*, *Iris versicolor*, and *Iris virginica*. In the main, the analysis has the aim of identifying if the machine learning model—in this case, a Decision Tree Classifier—can make correct predictions of species identity relying only on these measurements.
 
-The columns of the dataset are:
+The machine learning process outlined in this report is an entire cycle consisting of data exploration, cleaning, and transformation, modeling and finally, evaluation. Access to the full code and scripts that were used for the analysis is provided through the GitHub repository: https://github.com/hoomanesteki/iris-ml-predictor.
 
-`sepal length`, `sepal width`, `petal length`, `petal width`, `class`
+## Methods
 
+### Data Source and Preprocessing
 
-The main task of the present analysis is to create a classification model that predicts the species of an iris flower solely based on its features with high accuracy. A DecisionTreeClassifier model will be applied to make this prediction and we will give a summary of the results obtained from this model, including its accuracy on the test data.
+The collection of data was obtained from the UCI Machine Learning Repository @iris_53. There are no missing values in the dataset, and 50 samples represent each of the three classes. The class labels were converted into numbers (0 = setosa, 1 = versicolor, 2 = virginica). A train-test split was done to assess the model's performance on previously unseen data.
 
-Revealing the relationships among the features in this dataset has a bearing on the data characteristics since the Iris dataset is widely used to show the basic ideas of classification tasks. Furthermore, it helps to visualize how the differences in feature distributions influence the model's discriminative power between classes.
+### Exploratory Data Analysis
 
-Additionally, the small dataset size and the overlapping feature distributions, particularly between the classes versicolor and virginica, limit the model's performance. Consequently, these limitations should be taken into account when interpreting the results.
+Seaborn @Waskom2021 was used to create exploratory visualizations to know the distributions and separability of features:
 
-## Methods and Results
+- Pairplot to see class clustering @fig-pplot
+- Correlation heatmap to find correlations among quantitative features @fig-corr
+- Distribution plot indicating differences in petal length among species @fig-hist
 
-First, we obtained our data from the UC Irving machine learning repository @iris_53 and loaded it into our environment for analysis under the alias `iris`.
+![Pairplot of Features vs Target](../figures/pairplot.png){#fig-pplot width=95%}
 
-Our preliminary EDA revealed 150 non null values in each column, and a total of 150 rows. Each class had exactly 50 instances. The absence of null values is good, very good.
+![Heatmap of Correlation (1.0 = High +ve Correlation, 0 = No Correlation)](../figures/corr.png){#fig-corr width=70%}
 
-Using the pointblank package, we performed some validation on our data setting up rigorous rubrics to ensure we worked only with the data that passes these tests. This is the dataset we will use for the final stage of model building. 
+![Histogram of Classes vs Petal Width](../figures/histplot.png){#fig-hist width=70%}
 
-Before we get into the fun stuff, we split our data into training and test samples using the famous sklearn library in python @scikit-learn, to ensure total separation of the data for training and testing. This ensures that there is no leakage of data between the two samples, and our models integrity is maintained. We also converted our target variable to numeric instead of character, assigning labels of 0,1 and 2 to 'setosa','versicolor' and 'virginica' respectively.
+The above-mentioned visualizations indicate that *setosa* is completely isolated from the remaining two species whereas *versicolor* and *virginica* have slightly overlapping areas.
 
-Enough raw text, lets see what the spread looks like for each class. These plots were generated using the amazing seaborn plotting library. @Waskom2021
+### Model Building
 
-![Distribution of each flower class](../figures/pairplot.png){#fig-pairplot}
+A DummyClassifier (actually a classifier with no intelligence at all) was employed as a reference point for the performance comparison (nearly 33% correct predictions for the three equally balanced classes). Subsequently, a Decision Tree Classifier was fitted to capture the nonlinear patterns through the four input features.
 
-We can see from @fig-pairplot above, that `setosa` has the smallest petal width and length while `virginica` has the largest.
-
-Is there a correlation between our features? Lets see.
-
-![Correlation heatmap](../figures/corr.png){#fig-corr}
-
-We see a strong correaltion between petal length and sepal length in @fig-corr. There is also a strong correlation between `PetalWidthCm` and `PetalLengthCm`. This implies that the wider a petal is, the longer it also could be.
-
-Lets investigate what the distribution of Petal Length looks like for each of our species
-
-![Petal length distribution](../figures/histplot.png){#fig-hist}
-
-From @fig-hist, we can see that `Setosa` flower has the smallest petal size while `Virginica` is the largest. 
-
-
-Now that the the EDA is done and we have a sense of our data, lets fit a Decision Tree Classifier to our data.
-
-
-We start with a `DummyClassifier` model, to serve as a baseline to compare our model against.
-
-The dummy classifier achieved an accuracy of 0.33 on the test set, which is expected since it randomly predicts one of the three classes.
-
-With that in mind, lets fit a Decision Tree Classifier to our data.
 ```{python}
 #| label: tbl-metrics
-#| tbl-cap: Decision Tree Metrics
+#| tbl-cap: Decision Tree Classifier Performance Metrics
 metrics.style.set_table_styles([
     {'selector': 'th', 'props': [('background-color', '#f5f5f5')]}
 ])
 ```
 
-We see from @tbl-metrics that the decision tree classifier achieves an accuracy of approximately `{python} accuracy`% on the test set, which is a significant improvement over the dummy classifier. This indicates that the decision tree model is able to effectively capture patterns in the data to make accurate predictions about the species of iris flowers based on their features.
+## Results & Discussion
 
-![Confusion matrix](../figures/confusion_matrix.png){#fig-conf}
+The Decision Tree classifier produced a test accuracy of `{python} accuracy`%, which is a considerable improvement over the baseline dummy model. This is a strong indication that the model was able to recognize and utilize the underlying patterns in the data.
 
-## Discussion
+![Confusion matrix](../figures/confusion_matrix.png){#fig-conf width=70%}
 
-We observe that the model predicts `Iris setosa` perfectly, while there are some misclassifications between `Iris versicolor` and `Iris virginica`. This is likely due to the fact that these two species have more similar feature values compared to `Iris setosa`, which is distinctly different in terms of petal length and width.
+The confusion matrix (@fig-conf) highlights:
 
-This model will be able to accurately predict the species of iris flowers based on their features with a high degree of accuracy. Further improvements could be made by tuning the hyperparameters of the decision tree or exploring other classification algorithms.
+- The classification of *setosa* is perfect.
+- There are some misclassifications between *versicolor* and *virginica*, which is in line with the feature distributions that overlap.
 
-Future work could include testing this model on different flower species datasets to evaluate its generalizability and robustness.
-Future improvements could also involve exploring other models, such as Random Forests or logistic regression, to potentially enhance predictive performance.
+### Interpretation
+
+Setosa is distinguished without doubt by its distinct petal features. The mentioned mix up between *versicolor* and *virginica* indicates:
+
+- Feature intersection hampers the linear or rule based separation
+- A more complex or regularized decision tree might be beneficial
+- More sophisticated models (such as Random Forest, SVM) might have better performance
+
+### Future Work
+
+In order to elevate the model’s power and generalization:
+
+- Tune the hyperparameters (maximum depth, minimum samples split)
+- Try out other classifiers and evaluate them
+- Apply k-fold cross-validation to obtain a stability of results
+- Look into the importance of features and concentrates on misclassified samples
+- Consider the use of ensemble models as a means of improving robustness
 
 ## References
 
-1. Milestone 1 of DSCI 522.
-2. DSCI 571 course materials.
+@dsci522_milestone  
+@dsci571_materials
 

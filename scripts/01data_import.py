@@ -5,7 +5,7 @@ import requests
 
 def read_zip(url, directory):
         '''
-        read_zip
+        read_zip will import data from the URL provided. This function is currently tuned to read from UCI ML repo specifically the iris dataset.
         
         :param url: url to where the iris dataset is saved, with full path to zip file
         :param directory: directory for the output of the data to be saved to
