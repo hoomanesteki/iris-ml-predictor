@@ -34,6 +34,10 @@ The present endeavor constructs a model that classifies iris flower species thro
 
 The Iris dataset is often utilized for teaching machine learning because of its uncomplicated nature and distinct class structure. Nevertheless, the limitations of the small dataset containing 150 samples and the overlap of features between *versicolor* and *virginica* make it harder to generalize. Our model, regardless of these restrictions, still manages to exhibit high classification performance and serve as a robust baseline for multilabel prediction tasks.
 
+NB: Some of the code for our analysis was adapted from courses at the Masters Of Data Science program at UBC, particularly;
+1. DSCI 571: Supervised Learning I; @dsci571_materials
+2. DSCI 522: Data Science Workflows; @dsci522_milestone
+
 ## Introduction
 
 The 150 samples in the Iris dataset are determined by four numerical characteristics which together give the dimensions of the iris flowers. The target variable consists of three species: *Iris setosa*, *Iris versicolor*, and *Iris virginica*. In the main, the analysis has the aim of identifying if the machine learning model—in this case, a Decision Tree Classifier—can make correct predictions of species identity relying only on these measurements.
@@ -44,7 +48,7 @@ The machine learning process outlined in this report is an entire cycle consisti
 
 ### Data Source and Preprocessing
 
-The collection of data was obtained from the UCI Machine Learning Repository @iris_53. There are no missing values in the dataset, and 50 samples represent each of the three classes. The class labels were converted into numbers (0 = setosa, 1 = versicolor, 2 = virginica). A train-test split was done to assess the model's performance on previously unseen data.
+The collection of data was obtained from the UCI Machine Learning Repository @iris_53. There are no missing values in the dataset, and 50 samples represent each of the three classes. The class labels were converted into numbers (0 = setosa, 1 = versicolor, 2 = virginica). A train-test split @scikit_learn, was done to maintain the separation of training and testing data. This will help evaluate the model's performance on previously unseen data.
 
 ### Exploratory Data Analysis
 
