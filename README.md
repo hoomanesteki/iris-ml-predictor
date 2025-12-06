@@ -56,6 +56,12 @@ There are two supported ways to reproduce the analysis.
 
 ### **Start**
 
+Clone this repository locally to your machine.
+
+```bash
+git clone https://github.com/hoomanesteki/iris-ml-predictor.git
+```
+
 Make sure Docker Desktop is running.
 
 From the root of the repository, run:
@@ -102,6 +108,12 @@ docker compose rm
 ---
 
 ## **Option 2: Local Setup Using conda-lock**
+
+Clone this repository locally to your machine.
+
+```bash
+git clone https://github.com/hoomanesteki/iris-ml-predictor.git
+```
 
 ### **Install conda-lock**
 
