@@ -115,9 +115,6 @@ Future improvements could also involve exploring other models, such as Random Fo
 
 ## References
 
-1. UCI Machine Learning Repository: Iris Data Set. https://archive.ics.uci.edu/ml/datasets/iris
-2. Milestone 1 of DSCI 522.
-3. Scikit-learn documentation: https://scikit-learn.org/stable/
-4. Seaborn documentation: https://seaborn.pydata.org/
-5. DSCI 571 course materials.
+1. Milestone 1 of DSCI 522.
+2. DSCI 571 course materials.
 
