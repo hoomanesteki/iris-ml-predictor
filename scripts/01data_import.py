@@ -5,10 +5,10 @@ import requests
 
 def read_zip(url, directory):
         '''
-        Docstring for read_zip
+        read_zip
         
-        :param url: Description
-        :param directory: Description
+        :param url: url to where the iris dataset is saved, with full path to zip file
+        :param directory: directory for the output of the data to be saved to
         '''
         request = requests.get(url)
         filename_from_url = os.path.basename(url)

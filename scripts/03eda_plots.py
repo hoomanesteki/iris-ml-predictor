@@ -19,7 +19,7 @@ def main(processed_training_data, plot_to):
     :param plot_to: directory for where to save the images
     '''
 
-    #check if directory exists, if not create it
+    #check if plots directory exists, if not create it
     create_dir_if_not_exists(plot_to)
 
     #load the data
