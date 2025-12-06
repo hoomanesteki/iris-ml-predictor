@@ -8,6 +8,7 @@ format:
     pdf:
         toc: true
         toc-location: left-body
+bibliography: references.bib
 execute:
   echo: false
   warning: false
@@ -17,16 +18,23 @@ editor: source
 
 
 
-# Github URL: https://github.com/hoomanesteki/iris-ml-predictor
+ Github URL: https://github.com/hoomanesteki/iris-ml-predictor
 ```{python}
 import pandas as pd
 import os
 from IPython.display import Markdown, display
 from sklearn.metrics import classification_report, ConfusionMatrixDisplay
 ```
+
+
+```{python}
+metrics = pd.read_csv("../metrics/metrics_summary.csv")
+accuracy = round(metrics.iloc[0,0]*100,2)
+```
+
 ## Summary
 
-In this analysis we developed a classification model by utilizing the famous Iris dataset. The features of the iris flowers: sepal length, sepal width, petal length, and petal width were the basis on which a Decision Tree Classifier was used for prediction. In order to check its performance, the model was first trained on one part of the dataset and then validated on another part (test set).
+In this analysis we developed a classification model by utilizing the famous Iris dataset @iris_53. The features of the iris flowers: sepal length, sepal width, petal length, and petal width were the basis on which a Decision Tree Classifier was used for prediction. In order to check its performance, the model was first trained on one part of the dataset and then validated on another part (test set).
 
 The outcome of our model was quite impressive, as it reached a very high accuracy (`{python} accuracy`%) on the test set.
 
@@ -36,7 +44,7 @@ On the other hand, one can’t ignore the limitations of this work as well. The 
 
 ## Introduction
 
-For this analysis, the Iris dataset was chosen, a well-known dataset in both machine learning and statistics. Iris flowers are the subjects of the dataset, which contains 150 samples. Each flower is represented by four attributes: sepal length, sepal width, petal length, and petal width. The species of the iris flower is the target variable, which can be one of three species: Iris setosa, Iris versicolor, or Iris virginica.
+For this analysis, the Iris dataset was chosen, a well-known dataset in both machine learning and statistics. Iris flowers are the subjects of the dataset, which contains 150 samples. Each flower is represented by four attributes: sepal length, sepal width, petal length, and petal width. The species of the iris flower is the target variable, which can be one of three species: Iris setosa, Iris versicolor, or Iris virginica. 
 
 The columns of the dataset are:
 
@@ -51,26 +59,15 @@ Additionally, the small dataset size and the overlapping feature distributions, 
 
 ## Methods and Results
 
-First, let's load our data to a variable called `iris`.
+First, we obtained our data from the UC Irving machine learning repository @iris_53 and loaded it into our environment for analysis under the alias `iris`.
 
+Our preliminary EDA revealed 150 non null values in each column, and a total of 150 rows. Each class had exactly 50 instances. The absence of null values is good, very good.
 
-Do we have any null values? Let's check.
+Using the pointblank package, we performed some validation on our data setting up rigorous rubrics to ensure we worked only with the data that passes these tests. This is the dataset we will use for the final stage of model building. 
 
+Before we get into the fun stuff, we split our data into training and test samples using the famous sklearn library in python @scikit-learn, to ensure total separation of the data for training and testing. This ensures that there is no leakage of data between the two samples, and our models integrity is maintained. We also converted our target variable to numeric instead of character, assigning labels of 0,1 and 2 to 'setosa','versicolor' and 'virginica' respectively.
 
-150 non null values in each column, and a total of 150 rows. Therefore, no null values exist. Good.
-
-Let's check the distribution of each class in the dataset.
-
-
-Each class has exactly 50 instances.
-
-Now let us perform some validation on our dataset. Fingers crossed!!
-
-
-Before doing any more EDA, lets split our data into train and test.
-
-
-Lets see what the spread looks like for each class
+Enough raw text, lets see what the spread looks like for each class. These plots were generated using the amazing seaborn plotting library. @Waskom2021
 
 ![Distribution of each flower class](../figures/pairplot.png){#fig-pairplot}
 
@@ -80,34 +77,24 @@ Is there a correlation between our features? Lets see.
 
 ![Correlation heatmap](../figures/corr.png){#fig-corr}
 
-We see a strong correaltion between petal length and sepal length in @fig-corr. As well, there is a strong correlation between `PetalWidthCm` and `PetalLengthCm`. This implies that the wider a petal is, the longer it also could be.
+We see a strong correaltion between petal length and sepal length in @fig-corr. There is also a strong correlation between `PetalWidthCm` and `PetalLengthCm`. This implies that the wider a petal is, the longer it also could be.
 
-Lets see what the distribution of Petal Length looks like for each of our species
+Lets investigate what the distribution of Petal Length looks like for each of our species
 
 ![Petal length distribution](../figures/histplot.png){#fig-hist}
 
 From @fig-hist, we can see that `Setosa` flower has the smallest petal size while `Virginica` is the largest. 
 
-Lets fit a classification model to our data.
 
-Lets first isolate our variables into X_train, X_test, y_train, and y_test. We also need to convert our classification variable to numeric instead of character.
-
+Now that the the EDA is done and we have a sense of our data, lets fit a Decision Tree Classifier to our data.
 
 
-Lets start with a `DummyClassifier` object.
+We start with a `DummyClassifier` model, to serve as a baseline to compare our model against.
 
+The dummy classifier achieved an accuracy of 0.33 on the test set, which is expected since it randomly predicts one of the three classes.
 
-
-
-
-The dummy classifier achieves an accuracy of 0.33 on the test set, which is expected since it randomly predicts one of the three classes.
-
-Now we fit a Decision Tree Classifier to our data.
+With that in mind, lets fit a Decision Tree Classifier to our data.
 ```{python}
-metrics = pd.read_csv("../metrics/metrics_summary.csv")
-accuracy = round(metrics.iloc[0,0]*100,2)
-
-
 metrics.style.set_table_styles([
     {'selector': 'th', 'props': [('background-color', '#f5f5f5')]}
 ])
