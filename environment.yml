@@ -19,6 +19,9 @@ dependencies:
   - jupyterlab=4.*
   - nb_conda_kernels=2.*
 
+  # Quarto (Milestone 3)
+  - quarto=1.4.*
+
   # Tools
   - pip=24.*
   - conda-lock=3.0.4
