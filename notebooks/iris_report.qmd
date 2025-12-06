@@ -81,7 +81,7 @@ The confusion matrix (Figure @fig-conf) highlights:
 
 ## Interpretation
 
-Setosa is distinguished without doubt by its distinct petal features. The mentioned mix-up between *versicolor* and *virginica* indicates:
+Setosa is distinguished without doubt by its distinct petal features. The mentioned mix up between *versicolor* and *virginica* indicates:
 
 - Feature intersection hampers the linear or rule based separation
 - A more complex or regularized decision tree might be beneficial
@@ -99,6 +99,6 @@ In order to elevate the model’s power and generalization:
 
 # References
 
-1. Milestone 1 of DSCI 522.
-2. DSCI 571 course materials.
+@dsci522_milestone  
+@dsci571_materials
 
