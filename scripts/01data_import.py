@@ -1,0 +1,72 @@
+import click
+import os
+import zipfile
+import requests
+
+def read_zip(url, directory):
+        '''
+        read_zip
+        
+        :param url: url to where the iris dataset is saved, with full path to zip file
+        :param directory: directory for the output of the data to be saved to
+        '''
+        request = requests.get(url)
+        filename_from_url = os.path.basename(url)
+
+        # check if url exists, if not raise an error.
+        if request.status_code != 200:
+                raise ValueError('The URL provided does not exist.')
+
+        # check if URL points to a zip folder, if not raise an error.
+        if filename_from_url[-4:] != '.zip':
+                raise ValueError('The URL provided does not point to a zip file.')
+        
+        # check if the directory exists, if not raise an error
+        if not os.path.isdir(directory):
+                raise ValueError('The directory provided does not exist.')
+        
+        # write the zip file to the directory
+        path_to_zip_file = os.path.join(directory, filename_from_url)
+        with open(path_to_zip_file, 'wb') as f:
+                f.write(request.content)
+
+        # get list of files/directories in the directory
+        original_files = os.listdir(directory)
+        original_timestamps = []
+        for filename in original_files:
+                filename = os.path.join(directory, filename)
+                original_timestamp = os.path.getmtime(filename)
+                original_timestamps.append(original_timestamp)
+        
+        # extract the zip file to the directory
+        with zipfile.ZipFile(path_to_zip_file, 'r') as zip_ref:
+                zip_ref.extractall(directory)
+
+        # check if any files were extracted, if not raise an error
+        # get list of files/directories in the directory
+        current_files = os.listdir(directory)
+        current_timestamps = []
+        for filename in current_files:
+                filename = os.path.join(directory, filename)
+                current_timestamp = os.path.getmtime(filename)
+                current_timestamps.append(current_timestamp)
+        if (len(current_files) == len(original_files)) & (original_timestamps == current_timestamps):
+                raise ValueError('The ZIP file is empty.')
+        
+@click.command()
+@click.option('--url', type=str, help="URL of dataset to be downloaded")
+@click.option('--write_to', type=str, help="Path to directory where raw data will be written to")
+
+# Main function
+def main(url, write_to):
+        """
+        Downloads data zip data from the web to a local filepath and extracts it.
+        """
+        try:
+                read_zip(url, write_to)
+        except:
+                os.makedirs(write_to)
+                read_zip(url, write_to)
+
+if __name__ == '__main__':
+        main()
