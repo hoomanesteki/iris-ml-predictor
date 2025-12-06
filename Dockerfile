@@ -23,6 +23,10 @@ ENV PATH="/opt/conda/envs/522-iris/bin:${PATH}"
 # Install Jupyter kernel
 RUN python -m ipykernel install --user --name=522-iris --display-name="522-iris"
 
+# patch fix for the quarto folder
+RUN mkdir -p /opt/conda/envs/522-iris/bin/tools/x86_64 && \
+    ln -sf /opt/conda/envs/522-iris/bin/deno /opt/conda/envs/522-iris/bin/tools/x86_64/deno
+
 # Expose Jupyter port
 EXPOSE 8888
 

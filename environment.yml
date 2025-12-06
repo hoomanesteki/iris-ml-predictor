@@ -20,7 +20,7 @@ dependencies:
   - nb_conda_kernels=2.*
 
   # Quarto (Milestone 3)
-  - quarto=1.4.*
+  - quarto=1.8.26
 
   # Tools
   - pip=24.*
