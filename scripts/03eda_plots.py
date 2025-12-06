@@ -28,7 +28,6 @@ def main(processed_training_data, plot_to):
     #create pair plot
     pairplt = sns.pairplot(iris_train, hue='class')
     pairplt.figure.suptitle("Pairwise plot of all features", y=1.02, fontsize=16)
-    pairplt.figure.tight_layout()
     pairplt.figure.savefig(os.path.join(plot_to, "pairplot.png"),bbox_inches='tight')
 
     #create heatmap
@@ -38,7 +37,7 @@ def main(processed_training_data, plot_to):
         annot=True
     )
     plt.tight_layout()
-    plt.savefig(os.path.join(plot_to, "corr.png"))
+    plt.savefig(os.path.join(plot_to, "corr.png"),bbox_inches='tight')
     plt.close()
 
     #create histogram
@@ -54,7 +53,7 @@ def main(processed_training_data, plot_to):
 
     histplot.set_title('Distribution of Petal Width by Flower Species')
     plt.tight_layout()
-    plt.savefig(os.path.join(plot_to, "histplot.png"))
+    plt.savefig(os.path.join(plot_to, "histplot.png"),bbox_inches='tight')
     plt.close()
 
 if __name__ == '__main__':

@@ -92,15 +92,6 @@ quarto render notebooks/iris_report.qmd --to html
 quarto render notebooks/iris_report.qmd --to pdf
 ```
 
-### **Alternative (Run notebook)**  
-Open:
-
-```
-notebooks/iris_summary.ipynb
-```
-
-and run all cells.
-
 ### **Stop the container**
 
 ```bash
@@ -140,13 +131,6 @@ python scripts/05metrics.py --test_data=data --model_from=model --metrics_to=met
 
 quarto render notebooks/iris_report.qmd --to html
 quarto render notebooks/iris_report.qmd --to pdf
-```
-
-### **Alternative:**  
-Run:
-
-```
-notebooks/iris_summary.ipynb
 ```
 
 ---

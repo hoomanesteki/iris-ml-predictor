@@ -6,10 +6,10 @@ jupyter: python3
 format: 
   html:
     toc: true
-    toc-depth: 2
+    toc-depth: 3
   pdf:
     toc: true
-    toc-depth: 2
+    toc-depth: 3
 bibliography: references.bib
 execute:
   echo: false
@@ -34,29 +34,35 @@ The present endeavor constructs a model that classifies iris flower species thro
 
 The Iris dataset is often utilized for teaching machine learning because of its uncomplicated nature and distinct class structure. Nevertheless, the limitations of the small dataset containing 150 samples and the overlap of features between *versicolor* and *virginica* make it harder to generalize. Our model, regardless of these restrictions, still manages to exhibit high classification performance and serve as a robust baseline for multilabel prediction tasks.
 
-# Introduction
+## Introduction
 
 The 150 samples in the Iris dataset are determined by four numerical characteristics which together give the dimensions of the iris flowers. The target variable consists of three species: *Iris setosa*, *Iris versicolor*, and *Iris virginica*. In the main, the analysis has the aim of identifying if the machine learning model—in this case, a Decision Tree Classifier—can make correct predictions of species identity relying only on these measurements.
 
 The machine learning process outlined in this report is an entire cycle consisting of data exploration, cleaning, and transformation, modeling and finally, evaluation. Access to the full code and scripts that were used for the analysis is provided through the GitHub repository: https://github.com/hoomanesteki/iris-ml-predictor.
 
-# Methods
+## Methods
 
-## Data Source and Preprocessing
+### Data Source and Preprocessing
 
 The collection of data was obtained from the UCI Machine Learning Repository @iris_53. There are no missing values in the dataset, and 50 samples represent each of the three classes. The class labels were converted into numbers (0 = setosa, 1 = versicolor, 2 = virginica). A train-test split was done to assess the model's performance on previously unseen data.
 
-## Exploratory Data Analysis
+### Exploratory Data Analysis
 
 Seaborn @Waskom2021 was used to create exploratory visualizations to know the distributions and separability of features:
 
-- Pairplot to see class clustering 
-- Correlation heatmap to find correlations among quantitative features 
-- Distribution plot indicating differences in petal length among species 
+- Pairplot to see class clustering @fig-pplot
+- Correlation heatmap to find correlations among quantitative features @fig-corr
+- Distribution plot indicating differences in petal length among species @fig-hist
+
+![Pairplot of Features vs Target](../figures/pairplot.png){#fig-pplot width=95%}
+
+![Heatmap of Correlation (1.0 = High +ve Correlation, 0 = No Correlation)](../figures/corr.png){#fig-corr width=70%}
+
+![Histogram of Classes vs Petal Width](../figures/histplot.png){#fig-hist width=70%}
 
 The above-mentioned visualizations indicate that *setosa* is completely isolated from the remaining two species whereas *versicolor* and *virginica* have slightly overlapping areas.
 
-## Model Building
+### Model Building
 
 A DummyClassifier (actually a classifier with no intelligence at all) was employed as a reference point for the performance comparison (nearly 33% correct predictions for the three equally balanced classes). Subsequently, a Decision Tree Classifier was fitted to capture the nonlinear patterns through the four input features.
 
@@ -68,18 +74,18 @@ metrics.style.set_table_styles([
 ])
 ```
 
-# Results & Discussion
+## Results & Discussion
 
 The Decision Tree classifier produced a test accuracy of `{python} accuracy`%, which is a considerable improvement over the baseline dummy model. This is a strong indication that the model was able to recognize and utilize the underlying patterns in the data.
 
 ![Confusion matrix](../figures/confusion_matrix.png){#fig-conf width=70%}
 
-The confusion matrix (Figure @fig-conf) highlights:
+The confusion matrix (@fig-conf) highlights:
 
 - The classification of *setosa* is perfect.
 - There are some misclassifications between *versicolor* and *virginica*, which is in line with the feature distributions that overlap.
 
-## Interpretation
+### Interpretation
 
 Setosa is distinguished without doubt by its distinct petal features. The mentioned mix up between *versicolor* and *virginica* indicates:
 
@@ -87,7 +93,7 @@ Setosa is distinguished without doubt by its distinct petal features. The mentio
 - A more complex or regularized decision tree might be beneficial
 - More sophisticated models (such as Random Forest, SVM) might have better performance
 
-## Future Work
+### Future Work
 
 In order to elevate the model’s power and generalization:
 
@@ -97,7 +103,7 @@ In order to elevate the model’s power and generalization:
 - Look into the importance of features and concentrates on misclassified samples
 - Consider the use of ensemble models as a means of improving robustness
 
-# References
+## References
 
 @dsci522_milestone  
 @dsci571_materials
