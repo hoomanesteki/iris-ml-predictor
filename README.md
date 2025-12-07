@@ -140,14 +140,14 @@ python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --pl
 python scripts/04model.py --training_data=data --model_to=model --seed=522
 
 python scripts/05metrics.py --test_data=data --model_from=model --metrics_to=metrics --plot_to=figures
-
-quarto render notebooks/iris_report.qmd --to html
-quarto render notebooks/iris_report.qmd --to pdf
 ```
+
+The final updated report can then be found in `reports/iris_report.pdf`.
+
 
 ---
 
-## 🛠 Developer Notes
+## Developer Notes
 
 ### Working inside the container using JupyterLab
 
