@@ -7,14 +7,6 @@ SHELL ["/bin/bash", "-c"]
 # Set working directory
 WORKDIR /home/jovyan/work
 
-# install curl and quarto standalone
-RUN apt-get update && \
-    apt-get install -y curl ca-certificates perl && \
-    curl -L -o quarto.deb https://quarto.org/download/latest/quarto-linux-amd64.deb && \
-    apt-get install -y ./quarto.deb && \
-    rm quarto.deb && \
-    quarto install tinytex
-
 # Copy repository contents (includes conda-lock.yml)
 COPY conda-lock.yml .
 
