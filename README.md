@@ -24,7 +24,7 @@ Dataset link: https://archive.ics.uci.edu/dataset/
 The complete project report (HTML and PDF) can be found in:
 
 ```
-report/iris_report.html
+notebooks/iris_report.html
 report/iris_report.pdf
 ```
 
@@ -94,9 +94,9 @@ python scripts/04model.py --training_data=data --model_to=model --seed=522
 
 python scripts/05metrics.py --test_data=data --model_from=model --metrics_to=metrics --plot_to=figures
 
-quarto render notebooks/iris_report.qmd --to html
-quarto render notebooks/iris_report.qmd --to pdf
 ```
+The final updated report can then be found in `reports/iris_report.pdf`.
+
 
 ### **Stop the container**
 
