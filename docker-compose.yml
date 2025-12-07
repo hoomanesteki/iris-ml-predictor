@@ -1,6 +1,6 @@
 services:
   iris:
-    image: esteki/iris-ml-predictor:1.0.0
+    image: esteki/iris-ml-predictor:latest
     ports:
       - "8888:8888"
     volumes:
