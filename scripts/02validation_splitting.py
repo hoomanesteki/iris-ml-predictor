@@ -54,14 +54,14 @@ def main(raw_data, data_to, seed):
         pd.read_csv(raw_data, nrows=5)
     except Exception:
         print("WARNING: File extension is .data but file may not be valid CSV format.")  
-          
+
     # Check for correct data types in each column
     expected_dtypes = {
     "sepal length": "float64",
     "sepal width": "float64",
     "petal length": "float64",
     "petal width": "float64",
-    "class": "object"   # or "string" depending on your encoding
+    "class": "object"   
     }
     
     for col, expected in expected_dtypes.items():
