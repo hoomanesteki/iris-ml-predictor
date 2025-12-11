@@ -88,11 +88,11 @@ python scripts/01data_import.py --url="https://archive.ics.uci.edu/static/public
 
 python scripts/02validation_splitting.py --raw_data=data/raw/iris.data --data_to=data --seed=522
 
-python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --plot_to=figures
+python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --plot_to=results/figures
 
-python scripts/04model.py --training_data=data --model_to=model --seed=522
+python scripts/04model.py --training_data=data --model_to=results/model --seed=522
 
-python scripts/05metrics.py --test_data=data --model_from=model --metrics_to=metrics --plot_to=figures
+python scripts/05metrics.py --test_data=data --model_from=results/model --metrics_to=results/metrics --plot_to=results/figures
 
 ```
 The final updated report can then be found in `reports/iris_report.pdf`.
@@ -135,11 +135,11 @@ python scripts/01data_import.py --url="https://archive.ics.uci.edu/static/public
 
 python scripts/02validation_splitting.py --raw_data=data/raw/iris.data --data_to=data --seed=522
 
-python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --plot_to=figures
+python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --plot_to=results/figures
 
-python scripts/04model.py --training_data=data --model_to=model --seed=522
+python scripts/04model.py --training_data=data --model_to=results/model --seed=522
 
-python scripts/05metrics.py --test_data=data --model_from=model --metrics_to=metrics --plot_to=figures
+python scripts/05metrics.py --test_data=data --model_from=results/model --metrics_to=results/metrics --plot_to=results/figures
 ```
 
 The final updated report can then be found in `reports/iris_report.pdf`.

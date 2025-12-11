@@ -56,16 +56,18 @@ The collection of data was obtained from the UCI Machine Learning Repository @ir
 Seaborn @Waskom2021 was used to create exploratory visualizations to know the distributions and separability of features:
 
 - Pairplot to see class clustering @fig-pplot
-- Correlation heatmap to find correlations among quantitative features @fig-corr
-- Distribution plot indicating differences in petal length among species @fig-hist
 
-![Pairplot of Features vs Target](../results/figures/pairplot.png){#fig-pplot width=95%}
+![Pairplot of Features vs Target](../results/figures/pairplot.png){#fig-pplot width=70%}
+
+- Correlation heatmap to find correlations among quantitative features @fig-corr
 
 ![Heatmap of Correlation (1.0 = High +ve Correlation, 0 = No Correlation)](../results/figures/corr.png){#fig-corr width=70%}
 
+- Distribution plot indicating differences in petal length among species @fig-hist
+
 ![Histogram of Classes vs Petal Width](../results/figures/histplot.png){#fig-hist width=70%}
 
-The above-mentioned visualizations indicate that *setosa* is completely isolated from the remaining two species whereas *versicolor* and *virginica* have slightly overlapping areas.
+The visualizations indicate that *setosa* is completely isolated from the remaining two species whereas *versicolor* and *virginica* have slightly overlapping areas.
 
 ### Model Building
 
