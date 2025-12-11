@@ -19,9 +19,6 @@ dependencies:
   - jupyterlab=4.*
   - nb_conda_kernels=2.*
 
-  # Quarto (Milestone 3)
-  - quarto=1.8.26
-
   # Tools
   - pip=24.*
   - conda-lock=3.0.4
@@ -31,3 +28,4 @@ dependencies:
       - pointblank==0.6.1
       - narwhals<2.0.0
       - ucimlrepo==0.0.6
+      - quarto-cli==1.8.26

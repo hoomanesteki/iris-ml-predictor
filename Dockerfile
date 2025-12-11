@@ -7,6 +7,28 @@ SHELL ["/bin/bash", "-c"]
 # Set working directory
 WORKDIR /home/jovyan/work
 
+RUN apt-get update && apt-get install -y \
+    curl \
+    apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+ARG TARGETARCH
+ARG QUARTO_VERSION=1.8.26
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+    QUARTO_ARCH="amd64"; \
+    elif [ "$TARGETARCH" = "arm64" ]; then \
+    QUARTO_ARCH="arm64"; \
+    else \
+    echo "Unsupported architecture: $TARGETARCH" && exit 1; \
+    fi && \
+    curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-${QUARTO_ARCH}.tar.gz && \
+    mkdir -p /opt/quarto && \
+    tar -xzf quarto-${QUARTO_VERSION}-linux-${QUARTO_ARCH}.tar.gz -C /opt/quarto --strip-components=1 && \
+    rm quarto-${QUARTO_VERSION}-linux-${QUARTO_ARCH}.tar.gz && \
+    ln -s /opt/quarto/bin/quarto /usr/local/bin/quarto && \
+    # Clean up quarto installation files we don't need
+    rm -rf /opt/quarto/share/jupyter
+
 # Copy repository contents (includes conda-lock.yml)
 COPY conda-lock.yml .
 
