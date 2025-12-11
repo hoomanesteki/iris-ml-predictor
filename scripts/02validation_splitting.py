@@ -49,6 +49,12 @@ def main(raw_data, data_to, seed):
     # Check for empty observations
     if iris.isnull().any().any():
         print("WARNING: Dataset contains empty (NA/null) observations.")
+
+    try:
+        pd.read_csv(raw_data, nrows=5)
+    except Exception:
+        print("WARNING: File extension is .data but file may not be valid CSV format.")  
+          
     # Check for correct data types in each column
     expected_dtypes = {
     "sepal length": "float64",
