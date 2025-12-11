@@ -1,7 +1,1 @@
-.ipynb_checkpoints/
-notebooks/.ipynb_checkpoints
-.DS_Store
-.vscode
-*/.archive
-.Rhistory
-*/iris_report_files/libs
+.ipynb_checkpoints/ notebooks/.ipynb_checkpoints .DS_Store .vscode */.archive .Rhistory */iris_report_files/libs data/raw/ data/processed/ results/figures/ results/metrics/ results/models/ reports/iris_report.html reports/iris_report.pdf reports/iris_report_files/
