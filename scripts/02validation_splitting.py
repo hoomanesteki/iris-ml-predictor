@@ -43,10 +43,25 @@ def main(raw_data, data_to, seed):
     iris_validated = validation.get_sundered_data(type="pass")
     
     # Check for correct file type
-    
-
+    _, ext = os.path.splitext(raw_data)
+    if ext.lower() != ".data":
+        print(f"WARNING: Expected a .data file but got '{ext}'.")
     # Check for empty observations
+    if iris.isnull().any().any():
+        print("WARNING: Dataset contains empty (NA/null) observations.")
     # Check for correct data types in each column
+    expected_dtypes = {
+    "sepal length": "float64",
+    "sepal width": "float64",
+    "petal length": "float64",
+    "petal width": "float64",
+    "class": "object"   # or "string" depending on your encoding
+    }
+    
+    for col, expected in expected_dtypes.items():
+        actual = str(iris[col].dtype)
+        if actual != expected:
+            print(f"WARNING: Column '{col}' has dtype '{actual}', expected '{expected}'")
 
 
     #save full validated data to directory
