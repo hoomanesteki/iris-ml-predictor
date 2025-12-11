@@ -8,10 +8,6 @@ A reproducible machine-learning workflow project for DSCI 522 (Data Science Work
 
 The essence of this project is the investigation into the potential of a machine learning model to classify iris flowers into one of the three species, namely, *Setosa*, *Versicolor*, and *Virginica*, based on just four numerical measurements of the petals and sepals. The work being done here is a clear illustration of the reproducible workflow that adheres to the teachings of **DSCI 522 (Data Science Workflows)** course in UBC’s Master of Data Science program.
 
-We performed the training and evaluation of a **Decision Tree Classifier** with processed training data and then judged the classifier's performance on a completely novel test set. The final model was able to determine the test samples with an accuracy of **86%**, which indicates that the model successfully distinguished the majority of iris samples based only on simple geometric measurements. The confusion matrix illustrates flawless recognition of *Setosa*, whereas a little mixing up happens between the other two species, *Versicolor* and *Virginica*, which is normal due to the fact that they share some overlapping biological traits.
-
-Despite the fact that the model is very accurate in general, it still has some significant limitations. The Iris dataset is very small consisting only of 150 samples, and two species, namely, *Versicolor* and *Virginica*, not only have very similar feature distributions but are also, therefore, very difficult to separate. Moreover, only one model type (the decision tree) was studied during the analysis, thus there are still ways to obtain better performance through hyperparameter tuning, cross-validation, or utilizing more advanced classifiers like Random Forests or SVMs.
-
 The dataset that was used for this project is the famous **Iris dataset** which was first introduced by Ronald Fisher (1936). Each of the three species in the dataset has 50 samples and the dataset has been used as a benchmark for the very first supervised learning concepts.  
 The dataset was obtained from the **UCI Machine Learning Repository**:
 
@@ -60,6 +56,7 @@ Clone this repository locally to your machine.
 
 ```bash
 git clone https://github.com/hoomanesteki/iris-ml-predictor.git
+cd iris-ml-predictor
 ```
 
 Make sure Docker Desktop is running.
@@ -113,6 +110,7 @@ Clone this repository locally to your machine.
 
 ```bash
 git clone https://github.com/hoomanesteki/iris-ml-predictor.git
+cd iris-ml-predictor
 ```
 
 ### **Install conda-lock**
@@ -143,7 +141,6 @@ python scripts/05metrics.py --test_data=data --model_from=results/model --metric
 ```
 
 The final updated report can then be found in `reports/iris_report.pdf`.
-
 
 ---
 
