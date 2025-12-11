@@ -42,6 +42,13 @@ def main(raw_data, data_to, seed):
     validation
     iris_validated = validation.get_sundered_data(type="pass")
     
+    # Check for correct file type
+    
+
+    # Check for empty observations
+    # Check for correct data types in each column
+
+
     #save full validated data to directory
     iris_validated.to_csv(os.path.join(data_to, "iris_validated.csv"), index=False)
 
