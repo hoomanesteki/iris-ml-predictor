@@ -1,4 +1,4 @@
-# Base image (good choice)
+# Base image
 FROM condaforge/miniforge3:latest
 
 # Ensure bash is default shell for conda activation
@@ -9,7 +9,7 @@ WORKDIR /home/jovyan/work
 
 RUN apt-get update && apt-get install -y \
     curl \
-    # make \
+    make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
