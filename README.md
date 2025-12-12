@@ -129,39 +129,52 @@ make clean
 
 ## Developer Notes
 
-### Working inside the container using JupyterLab
+### Working inside the container (JupyterLab)
 
+In order to initiate the containerized environment and launch JupyterLab, execute:
 ```bash
 make up
 ```
+Take the Jupyter token URL that will be displayed in the terminal and paste it into your browser.
 
-Open the Jupyter token URL printed in the terminal.
+### Working inside the container (command line only)
 
-### Working inside the container using VS Code
-
-From the project root:
-
+In case you want to work with the terminal inside the container straight away (for instance, using VS Code or CLI tools), execute:
 ```bash
 docker compose run --rm terminal bash
 ```
-
-To exit:
-
+To leave the container shell, type:
 ```bash
 exit
+```
+---
+
+## Testing
+
+To ensure the analysis pipeline's important parts, some basic unit tests are included.
+
+The tests cover:
+- Logic of data import and validation
+- The reproducibility and correctness of the split between the training and test datasets
+
+The tests are written in `pytest` and can be executed from the root of the project via:
+```bash
+pytest
 ```
 
 ---
 
 ## Clean Up
 
-To stop and remove all running analysis resources:
-
+In order to halt and eliminate all the Docker containers that are already running and were used for the analysis, execute the following commands:
 ```bash
 make stop
 docker compose rm
 ```
-
+To wipe out all the files produced during the process and to reset the project completely, you can use the command:
+```bash
+make clean
+```
 ---
 
 ## References
