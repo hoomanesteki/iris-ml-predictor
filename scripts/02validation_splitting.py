@@ -50,9 +50,7 @@ def main(raw_data, data_to, seed):
 
     iris = pd.read_csv(raw_data, names=colnames, header=None)
 
-    # -----------------------------
-    # BASIC VALIDATION (Python only)
-    # -----------------------------
+    
 
     if not iris["petal width"].between(0, 5).all():
         print("WARNING: petal width outside expected range.")
