@@ -25,7 +25,7 @@ data/processed/y_test.csv : scripts/02validation_splitting.py data/raw/iris.data
 		--raw_data=data/raw/iris.data \
 		--data_to=data/processed
 
-#3. EDA plots
+#3. EDA Plots
 results/figures/pairplot.png \
 results/figures/corr.png \
 results/figures/histplot.png : scripts/03eda_plots.py data/processed/iris_train.csv
