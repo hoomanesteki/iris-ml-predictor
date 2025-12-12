@@ -75,7 +75,7 @@ clean:
 
 #8. End-to-end analysis pipeline 
 all: reports/iris_report.html reports/iris_report.pdf
-	@echo "✓ Full analysis pipeline completed (data → split → eda → model → metrics → report)"
+	@echo "Full analysis pipeline completed (data > split > eda > model > metrics > report)"
 
 #--------------------------------
 # Docker and Enviroment Workflow
