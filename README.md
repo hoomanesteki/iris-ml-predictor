@@ -69,7 +69,7 @@ make up
 `http://127.0.0.1:8888/lab?token=`
 
 Using your browser, copy this URL and paste it to access JupyterLab within the Docker container.
-
+ 
 5. Use the Makefile to run the total analysis pipeline.
 Through a terminal in JupyterLab (or from the project directory), execute:
 ```bash
@@ -84,7 +84,8 @@ All analysis steps in the right order will be executed and the final HTML report
 make clean
 ```
 
-7. Finally, to stop and remove Docker containers, run the following commands:
+7. Finally, to stop and remove Docker containers, do the following:
+    In the terminal hit control + c, then run the following in the terminal;
 ```bash
 make stop
 docker compose rm
