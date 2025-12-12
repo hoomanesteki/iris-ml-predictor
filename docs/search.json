@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "reports/iris_report.html",
+    "href": "reports/iris_report.html",
+    "title": "Flower Species Classification Based on Iris Dataset",
+    "section": "",
+    "text": "GitHub URL: https://github.com/hoomanesteki/iris-ml-predictor"
+  },
+  {
+    "objectID": "reports/iris_report.html#summary",
+    "href": "reports/iris_report.html#summary",
+    "title": "Flower Species Classification Based on Iris Dataset",
+    "section": "Summary",
+    "text": "Summary\nThe present endeavor constructs a model that classifies iris flower species through the classic Iris dataset Fisher (1936). It was a four-dimensional feature set, which consisted of sepal length, sepal width, petal length, and petal width that was employed to get a Decision Tree Classifier. The model’s performance was determined using a separate test set, and accuracy levels of 93.33% were observed, which is quite a strong one.\nThe Iris dataset is often utilized for teaching machine learning because of its uncomplicated nature and distinct class structure. Nevertheless, the limitations of the small dataset containing 150 samples and the overlap of features between versicolor and virginica make it harder to generalize. Our model, regardless of these restrictions, still manages to exhibit high classification performance and serve as a robust baseline for multilabel prediction tasks.\nNB: Some of the code for our analysis was adapted from courses at the Masters Of Data Science program at UBC, particularly; 1. DSCI 571: Supervised Learning I; UBC Master of Data Science Program (2025b) 2. DSCI 522: Data Science Workflows; UBC Master of Data Science Program (2025a)"
+  },
+  {
+    "objectID": "reports/iris_report.html#introduction",
+    "href": "reports/iris_report.html#introduction",
+    "title": "Flower Species Classification Based on Iris Dataset",
+    "section": "Introduction",
+    "text": "Introduction\nThe 150 samples in the Iris dataset are determined by four numerical characteristics which together give the dimensions of the iris flowers. The target variable consists of three species: Iris setosa, Iris versicolor, and Iris virginica. In the main, the analysis has the aim of identifying if the machine learning model—in this case, a Decision Tree Classifier—can make correct predictions of species identity relying only on these measurements.\nThe machine learning process outlined in this report is an entire cycle consisting of data exploration, cleaning, and transformation, modeling and finally, evaluation. Access to the full code and scripts that were used for the analysis is provided through the GitHub repository: https://github.com/hoomanesteki/iris-ml-predictor."
+  },
+  {
+    "objectID": "reports/iris_report.html#methods",
+    "href": "reports/iris_report.html#methods",
+    "title": "Flower Species Classification Based on Iris Dataset",
+    "section": "Methods",
+    "text": "Methods\n\nData Source and Preprocessing\nThe collection of data was obtained from the UCI Machine Learning Repository Fisher (1936). There are no missing values in the dataset, and 50 samples represent each of the three classes. The class labels were converted into numbers (0 = setosa, 1 = versicolor, 2 = virginica). A train-test split Pedregosa et al. (2011), was done to maintain the separation of training and testing data. This will help evaluate the model’s performance on previously unseen data.\n\n\nExploratory Data Analysis\nSeaborn Waskom (2021) was used to create exploratory visualizations to know the distributions and separability of features:\n\nPairplot to see class clustering Figure 1\n\n\n\n\n\n\n\nFigure 1: Pairplot of Features vs Target\n\n\n\n\nCorrelation heatmap to find correlations among quantitative features Figure 2\n\n\n\n\n\n\n\nFigure 2: Heatmap of Correlation (1.0 = High +ve Correlation, 0 = No Correlation)\n\n\n\n\nDistribution plot indicating differences in petal length among species Figure 3\n\n\n\n\n\n\n\nFigure 3: Histogram of Classes vs Petal Width\n\n\n\nThe visualizations indicate that setosa is completely isolated from the remaining two species whereas versicolor and virginica have slightly overlapping areas.\n\n\nModel Building\nA DummyClassifier (actually a classifier with no intelligence at all) was employed as a reference point for the performance comparison (nearly 33% correct predictions for the three equally balanced classes). Subsequently, a Decision Tree Classifier was fitted to capture the nonlinear patterns through the four input features.\n\n\n\n\nTable 1: Decision Tree Classifier Performance Metrics\n\n\n\n\n\n\n\n\n \naccuracy\nprecision_weighted\nrecall_weighted\nf1_weighted\n\n\n\n\n0\n0.933333\n0.950000\n0.933333\n0.934762"
+  },
+  {
+    "objectID": "reports/iris_report.html#results-discussion",
+    "href": "reports/iris_report.html#results-discussion",
+    "title": "Flower Species Classification Based on Iris Dataset",
+    "section": "Results & Discussion",
+    "text": "Results & Discussion\nThe Decision Tree classifier produced a test accuracy of 93.33%, which is a considerable improvement over the baseline dummy model. This is a strong indication that the model was able to recognize and utilize the underlying patterns in the data.\n\n\n\n\n\n\nFigure 4: Confusion matrix\n\n\n\nThe confusion matrix (Figure 4) highlights:\n\nThe classification of setosa is perfect.\nThere are some misclassifications between versicolor and virginica, which is in line with the feature distributions that overlap.\n\n\nInterpretation\nSetosa is distinguished without doubt by its distinct petal features. The mentioned mix up between versicolor and virginica indicates:\n\nFeature intersection hampers the linear or rule based separation\nA more complex or regularized decision tree might be beneficial\nMore sophisticated models (such as Random Forest, SVM) might have better performance\n\n\n\nFuture Work\nIn order to elevate the model’s power and generalization:\n\nTune the hyperparameters (maximum depth, minimum samples split)\nTry out other classifiers and evaluate them\nApply k-fold cross-validation to obtain a stability of results\nLook into the importance of features and concentrates on misclassified samples\nConsider the use of ensemble models as a means of improving robustness"
+  }
+]

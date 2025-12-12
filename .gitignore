@@ -28,3 +28,5 @@ results/models/
 # Generated reports
 reports/iris_report.html
 reports/iris_report.pdf
+
+/.quarto/
