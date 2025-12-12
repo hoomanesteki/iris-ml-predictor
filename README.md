@@ -23,7 +23,6 @@ To generate the report again, execute the entire workflow with:
 
 ```
 make all
-
 ```
 Once the pipeline is done, the processed HTML report will be found at:
 
