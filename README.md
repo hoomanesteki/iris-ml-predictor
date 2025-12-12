@@ -49,7 +49,7 @@ Regardless of the approach, the analysis is guaranteed to be reproducible across
 
 There are two supported ways to reproduce the analysis.
 
----
+
 
 #### Option 1 (Recommended): Run using Docker Compose
 
