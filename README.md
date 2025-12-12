@@ -56,60 +56,40 @@ There are two supported ways to reproduce the analysis.
 
 ---
 
-## **Option 1 (Recommended): Run using Docker Compose**
+## Option 1 (Recommended): Run using Docker Compose
 
-### **Start**
-
-Clone this repository locally to your machine.
-
+1. First step will be to get the repository cloned and change into the project folder:
 ```bash
 git clone https://github.com/hoomanesteki/iris-ml-predictor.git
 cd iris-ml-predictor
 ```
+2. Check if Docker Desktop is active on your computer.
 
-Make sure Docker Desktop is running.
-
-From the root of the repository, run:
-
+3. Make the Docker image and running the containerized environment from the repository root:
 ```bash
 make build
 make up
 ```
+4. Once the container is up, there will be a URL printed in the terminal with:
+`http://127.0.0.1:8888/lab?token=`
 
-Look for a URL starting with:
+Using your browser, copy this URL and paste it to access JupyterLab within the Docker container.
 
-```
-http://127.0.0.1:8888/lab?token=
-```
-
-Paste it into your browser to open JupyterLab inside the container.
-
-
-### Run the full analysis pipeline
-
-The entire analysis pipeline is managed through the Makefile.
-
-Run from the terminal in JupyterLab (or from the project root if in local environment):
-
+5. Use the Makefile to run the total analysis pipeline.
+Through a terminal in JupyterLab (or from the project directory), execute:
 ```bash
 make all
 ```
 
-This command runs all analysis steps in the right order and prepares the final report located in:
-
+All analysis steps in the right order will be executed and the final HTML report will be created at:
 `reports/iris_report.html`
 
-To delete all files created and return the project to a clean state, type:
-
+6. (Optional) If you want to get rid of all the generated files and bring back the project to a clean state, then run:
 ```bash
 make clean
-
 ```
 
-### Stop the container
-
-To stop and remove the running Docker containers, run:
-
+7. Finally, to stop and remove Docker containers, run the following commands:
 ```bash
 make stop
 docker compose rm
