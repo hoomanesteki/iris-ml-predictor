@@ -24,13 +24,9 @@ To generate the report again, execute the entire workflow with:
 ```
 make all
 ```
-Once the pipeline is done, the processed HTML report will be found at:
+Once the pipeline is done, the processed HTML report will be found at: `reports/iris_report.html`
 
-reports/iris_report.html
-
-The original Quarto document that was used to create the report is:
-
-reports/iris_report.qmd
+The original Quarto document that was used to create the report is: `reports/iris_report.qmd`
 
 ---
 
@@ -43,7 +39,7 @@ Docker is the tool used for the containerized execution:
 - A custom Dockerfile is used to install all required dependencies and managed using Docker Compose
 
 In the case of local (non-Docker) execution, dependencies are managed using conda-lock:
-- Requirements are specified in environment.yml and locked in conda-lock.yml
+- Requirements are specified in `environment.yml` and locked in `conda-lock.yml`
 
 Regardless of the approach, the analysis is guaranteed to be reproducible across all machines.
 
