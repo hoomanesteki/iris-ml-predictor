@@ -6,6 +6,8 @@ notebooks/.ipynb_checkpoints/
 .DS_Store
 .vscode/
 .Rhistory
+__pycache__/
+*.pyc
 
 # Archived or temporary folders
 */.archive/
