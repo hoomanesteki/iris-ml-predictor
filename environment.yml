@@ -22,7 +22,7 @@ dependencies:
   # Tools
   - pip=24.*
   - conda-lock=3.0.4
-  # - pytest
+  - pytest=8.* 
 
   # Pip-only packages
   - pip:
