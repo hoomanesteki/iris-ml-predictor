@@ -51,7 +51,7 @@ There are two supported ways to reproduce the analysis.
 
 ---
 
-## Option 1 (Recommended): Run using Docker Compose
+#### Option 1 (Recommended): Run using Docker Compose
 
 1. First step will be to get the repository cloned and change into the project folder:
 ```bash
@@ -92,7 +92,7 @@ docker compose rm
 
 ---
 
-## Option 2: Local Setup Using conda-lock
+#### Option 2: Local Setup Using conda-lock
 
 1. First, you need to clone the repository and then switch to the project directory as follows:
 ```bash
