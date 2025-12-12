@@ -1,4 +1,4 @@
-# Global Settings and phony Targets
+# Global Settings and Phony Targets
 .DEFAULT_GOAL := help
 
 .PHONY: help all dockerbuild cl env build run up stop docker-build-push \
