@@ -17,28 +17,36 @@ Dataset link: https://archive.ics.uci.edu/dataset/
 
 ## Report
 
-The complete project report (HTML and PDF) can be found in:
+The report of the project is produced automatically by the analysis pipeline and does not get saved in the repository.
+
+To generate the report again, execute the entire workflow with:
 
 ```
-notebooks/iris_report.html
-report/iris_report.pdf
-```
-
-The source Quarto document is:
+make all
 
 ```
-notebooks/iris_report.qmd
-```
+Once the pipeline is done, the processed HTML report will be found at:
+
+reports/iris_report.html
+
+The original Quarto document that was used to create the report is:
+
+reports/iris_report.qmd
 
 ---
 
 ## Dependencies
 
-This project uses a container-based workflow for full reproducibility.
+Two reproducible execution environments are supported by this project.
 
-- The Docker image is built from `quay.io/jupyter/minimal-notebook`  
-- All additional dependencies (Python, Quarto, scikit-learn, seaborn, etc.) are installed via our custom **Dockerfile**
-- For local (non-Docker) workflows, dependencies are managed using **conda-lock**
+Docker is the tool used for the containerized execution:
+- The image is created from `quay.io/jupyter/minimal-notebook`
+- A custom Dockerfile is used to install all required dependencies and managed using Docker Compose
+
+In the case of local (non-Docker) execution, dependencies are managed using conda-lock:
+- Requirements are specified in environment.yml and locked in conda-lock.yml
+
+Regardless of the approach, the analysis is guaranteed to be reproducible across all machines.
 
 ---
 
@@ -76,26 +84,31 @@ http://127.0.0.1:8888/lab?token=
 
 Paste it into your browser to open JupyterLab inside the container.
 
-### **Run the full analysis pipeline**
 
-Inside JupyterLab’s terminal:
+### Run the full analysis pipeline
+
+The entire analysis pipeline is managed through the Makefile.
+
+Run from the terminal in JupyterLab (or from the project root if in local environment):
 
 ```bash
-python scripts/01data_import.py --url="https://archive.ics.uci.edu/static/public/53/iris.zip" --write_to=data/raw
+make all
+```
 
-python scripts/02validation_splitting.py --raw_data=data/raw/iris.data --data_to=data --seed=522
+This command runs all analysis steps in the right order and prepares the final report located in:
 
-python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --plot_to=results/figures
+`reports/iris_report.html`
 
-python scripts/04model.py --training_data=data --model_to=results/model --seed=522
+To delete all files created and return the project to a clean state, type:
 
-python scripts/05metrics.py --test_data=data --model_from=results/model --metrics_to=results/metrics --plot_to=results/figures
+```bash
+make clean
 
 ```
-The final updated report can then be found in `reports/iris_report.pdf`.
 
+### Stop the container
 
-### **Stop the container**
+To stop and remove the running Docker containers, run:
 
 ```bash
 make stop
@@ -104,44 +117,34 @@ docker compose rm
 
 ---
 
-## **Option 2: Local Setup Using conda-lock**
+## Option 2: Local Setup Using conda-lock
 
-Clone this repository locally to your machine.
-
+1. First, you need to clone the repository and then switch to the project directory as follows:
 ```bash
 git clone https://github.com/hoomanesteki/iris-ml-predictor.git
 cd iris-ml-predictor
 ```
-
-### **Install conda-lock**
-
+2. If you haven't done so already, install the conda-lock package:
 ```bash
 conda install -c conda-forge conda-lock -y
 ```
-
-### **Create the environment**
-
+3. Generate and enable the reproducible environment:
 ```bash
 conda-lock install --name 522-iris conda-lock.yml
-conda activate 522-iris
+conda activate 522-iris 
 ```
-
-### **Run the full workflow**
-
+4. Using the Makefile, the entire analysis pipeline will be executed:
 ```bash
-python scripts/01data_import.py --url="https://archive.ics.uci.edu/static/public/53/iris.zip" --write_to=data/raw
-
-python scripts/02validation_splitting.py --raw_data=data/raw/iris.data --data_to=data --seed=522
-
-python scripts/03eda_plots.py --processed_training_data=data/iris_train.csv --plot_to=results/figures
-
-python scripts/04model.py --training_data=data --model_to=results/model --seed=522
-
-python scripts/05metrics.py --test_data=data --model_from=results/model --metrics_to=results/metrics --plot_to=results/figures
+make all
 ```
 
-The final updated report can then be found in `reports/iris_report.pdf`.
+Upon completion of the pipeline, the finalized HTML report will be found in:
+`reports/iris_report.html`
 
+5. (Optional) Clean up all the created files and bring back the project to its original state by running:
+```bash
+make clean
+```
 ---
 
 ## Developer Notes
