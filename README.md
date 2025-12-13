@@ -24,7 +24,8 @@ To generate the report again, execute the entire workflow with:
 ```
 make all
 ```
-Once the pipeline is done, the processed HTML report will be found [here](https://hoomanesteki.github.io/iris-ml-predictor/reports/iris_report.html)
+Once the pipeline is done, the processed HTML report will be found [here](https://hoomanesteki.github.io/iris-ml-predictor/reports/iris_report.html).
+
 The processed pdf will be found at: `reports/iris_report.pdf`
 
 The original Quarto document that was used to create the report is: `reports/iris_report.qmd`
@@ -119,7 +120,8 @@ conda activate 522-iris
 make all
 ```
 
-Upon completion of the pipeline, the finalized HTML report will be found at: `reports/iris_report.html`
+Upon completion of the pipeline, the finalized HTML report will be found at: `reports/iris_report.html`.
+
 The processed pdf will be found at: `reports/iris_report.pdf`
 
 5. (Optional) Clean up all the created files and bring back the project to its original state by running:
