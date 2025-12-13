@@ -34,10 +34,10 @@ results/figures/histplot.png : scripts/03eda_plots.py data/processed/iris_train.
 		--plot_to=results/figures
 
 #4. Model Training
-results/models/tree_model.pkl: scripts/04model.py \
+results/models/tree_model.pkl: scripts/model.py \
                                data/processed/X_train.csv \
                                data/processed/y_train.csv
-	python scripts/04model.py \
+	python scripts/model.py \
 		--training_data=data/processed \
 		--model_to=results/models
 
