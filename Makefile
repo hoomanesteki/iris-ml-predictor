@@ -5,13 +5,12 @@ all:
 
 clean:
 	rm -f reports/results/figures/*.png
-	rm -f reports/reports/results/figures/*.png
 	rm -f reports/results/metrics/*.csv
 	rm -f reports/results/models/*.pkl
 	rm -f data/raw/*.data
 	rm -f data/processed/*.csv
-	rm -f reports/reports/*.pdf
-	rm -f reports/reports/*.html
+	rm -f reports/*.pdf
+	rm -f reports/*.html
 	rm -rf reports/iris_report_files
 	@echo "All files deleted."
 
