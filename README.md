@@ -195,3 +195,7 @@ make clean
 All analysis code is licensed under the **MIT License** (see `LICENSE` file).  
 The report and documentation follow the usage guidelines of the UBC MDS program.
 
+### Project Acknowledgment
+
+This project is a demonstration for educational purposes, and the structure and workflow was adapted from the “Breast Cancer Predictor” project by Tiffany Timbers, Melissa Lee, Joel Ostblom & Weilin Han.
+
