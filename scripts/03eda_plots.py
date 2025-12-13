@@ -8,14 +8,14 @@ def create_dir_if_not_exists(directory):
         os.makedirs(directory, exist_ok=True)
 
 @click.command()
-@click.option('--processed_training_data', type=str, help="Path to processed training data")
+@click.option('--processed_training_data', type=str, help="Path to folder of processed training data")
 @click.option('--plot_to', type=str, help="Path to directory where the plot will be written to")
 
 def main(processed_training_data, plot_to):
     '''
     creates a pairwise comparison plot, heatmap and histogram for the features of the iris.csv training data set.
     
-    :param processed_training_data: full path to the training data
+    :param processed_training_data: full path to the repo where training data is saved
     :param plot_to: directory for where to save the images
     '''
 
@@ -23,7 +23,7 @@ def main(processed_training_data, plot_to):
     create_dir_if_not_exists(plot_to)
 
     #load the data
-    iris_train = pd.read_csv(processed_training_data)
+    iris_train = pd.read_csv(os.path.join(processed_training_data, "iris_train.csv"))
 
     #create pair plot
     pairplt = sns.pairplot(iris_train, hue='class')
