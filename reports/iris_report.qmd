@@ -25,7 +25,7 @@ GitHub URL: [https://github.com/hoomanesteki/iris-ml-predictor](https://github.c
 import pandas as pd
 from IPython.display import Markdown, display
 
-metrics = pd.read_csv("../results/metrics/metrics_summary.csv")
+metrics = pd.read_csv("results/metrics/metrics_summary.csv")
 accuracy = round(metrics.iloc[0,0] * 100, 2)
 ```
 
@@ -57,15 +57,15 @@ Seaborn @Waskom2021 was used to create exploratory visualizations to know the di
 
 - Pairplot to see class clustering @fig-pplot
 
-![Pairplot of Features vs Target](../results/figures/pairplot.png){#fig-pplot width=70%}
+![Pairplot of Features vs Target](results/figures/pairplot.png){#fig-pplot width=70%}
 
 - Correlation heatmap to find correlations among quantitative features @fig-corr
 
-![Heatmap of Correlation (1.0 = High +ve Correlation, 0 = No Correlation)](../results/figures/corr.png){#fig-corr width=70%}
+![Heatmap of Correlation (1.0 = High +ve Correlation, 0 = No Correlation)](results/figures/corr.png){#fig-corr width=70%}
 
 - Distribution plot indicating differences in petal length among species @fig-hist
 
-![Histogram of Classes vs Petal Width](../results/figures/histplot.png){#fig-hist width=70%}
+![Histogram of Classes vs Petal Width](results/figures/histplot.png){#fig-hist width=70%}
 
 The visualizations indicate that *setosa* is completely isolated from the remaining two species whereas *versicolor* and *virginica* have slightly overlapping areas.
 
@@ -85,7 +85,7 @@ metrics.style.set_table_styles([
 
 The Decision Tree classifier produced a test accuracy of `{python} accuracy`%, which is a considerable improvement over the baseline dummy model. This is a strong indication that the model was able to recognize and utilize the underlying patterns in the data.
 
-![Confusion matrix](../results/figures/confusion_matrix.png){#fig-conf width=70%}
+![Confusion matrix](results/figures/confusion_matrix.png){#fig-conf width=70%}
 
 The confusion matrix (@fig-conf) highlights:
 

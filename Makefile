@@ -1,16 +1,16 @@
 .PHONY: all clean scratch cl build stop up run
 
 all:
-	make reports/reports/iris_report.html
+	make reports/iris_report.html
 
 clean:
-	rm -f results/figures/*.png
-	rm -f results/metrics/*.csv
-	rm -f results/models/*.pkl
+	rm -f reports/results/figures/*.png
+	rm -f reports/reports/results/figures/*.png
+	rm -f reports/results/metrics/*.csv
+	rm -f reports/results/models/*.pkl
 	rm -f data/raw/*.data
 	rm -f data/processed/*.csv
 	rm -f reports/reports/*.pdf
-	rm -f reports/results/figures/*.png
 	rm -f reports/reports/*.html
 	rm -rf reports/iris_report_files
 	@echo "All files deleted."
@@ -25,49 +25,49 @@ scratch:
 		--data_to=data/processed
 	python scripts/03eda_plots.py \
 		--processed_training_data=data/processed \
-		--plot_to=results/figures
+		--plot_to=reports/results/figures
 	python scripts/model.py \
 		--training_data=data/processed \
-		--model_to=results/models
+		--model_to=reports/results/models
 	python scripts/05metrics.py \
 		--test_data=data/processed \
-		--model_from=results/models \
-		--metrics_to=results/metrics \
-		--plot_to=results/figures
+		--model_from=reports/results/models \
+		--metrics_to=reports/results/metrics \
+		--plot_to=reports/results/figures
 	quarto render reports/iris_report.qmd
 	@echo "Output available at reports/"
 
-reports/reports/iris_report.html: reports/iris_report.qmd \
-			results/metrics/metrics_summary.csv \
-			results/figures/pairplot.png \
-			results/figures/corr.png \
-			results/figures/histplot.png \
-			results/figures/confusion_matrix.png
+reports/iris_report.html: reports/iris_report.qmd \
+			reports/results/metrics/metrics_summary.csv \
+			reports/results/figures/pairplot.png \
+			reports/results/figures/corr.png \
+			reports/results/figures/histplot.png \
+			reports/results/figures/confusion_matrix.png
 	quarto render reports/iris_report.qmd
 	@echo "Output available at reports/"
 
-results/metrics/metrics_summary.csv results/figures/confusion_matrix.png: scripts/05metrics.py \
-																	models/tree_model.pkl \
+reports/results/metrics/metrics_summary.csv reports/results/figures/confusion_matrix.png: scripts/05metrics.py \
+																	reports/results/models/tree_model.pkl \
 																	data/processed/X_test.csv \
 																	data/processed/y_test.csv
 	python scripts/05metrics.py \
 		--test_data=data/processed \
-		--model_from=results/models \
-		--metrics_to=results/metrics \
-		--plot_to=results/figures
+		--model_from=reports/results/models \
+		--metrics_to=reports/results/metrics \
+		--plot_to=reports/results/figures
 	
-models/tree_model.pkl: scripts/model.py \
+reports/results/models/tree_model.pkl: scripts/model.py \
 					data/processed/X_train.csv \
 					data/processed/y_train.csv
 	python scripts/model.py \
 		--training_data=data/processed \
-		--model_to=results/models
+		--model_to=reports/results/models
 
-results/figures/pairplot.png results/figures/corr.png results/figures/histplot.png: scripts/03eda_plots.py \
+reports/results/figures/pairplot.png reports/results/figures/corr.png reports/results/figures/histplot.png: scripts/03eda_plots.py \
 																		data/processed/iris_train.csv
 	python scripts/03eda_plots.py \
 		--processed_training_data=data/processed \
-		--plot_to=results/figures
+		--plot_to=reports/results/figures
 
 data/processed/X_train.csv data/processed/y_train.csv data/processed/X_test.csv data/processed/y_test.csv: scripts/02validation_splitting.py \
 																									data/raw/iris.data
