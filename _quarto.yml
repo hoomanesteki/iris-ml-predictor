@@ -1,5 +1,5 @@
 project: 
-  type: website
-  output-dir: docs
+  type: default
+  output-dir: reports
   render:
-    - reports/iris_report.qmd  
+    - reports/iris_report.qmd

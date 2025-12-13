@@ -30,3 +30,5 @@ reports/iris_report.html
 reports/iris_report.pdf
 
 /.quarto/
+
+**/*.quarto_ipynb

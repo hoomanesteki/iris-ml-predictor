@@ -1,7 +1,7 @@
 ---
 title: "Flower Species Classification Based on Iris Dataset"
-author: "Suryash Chakravarty, Hooman Esteki & Bright Arafat Bello"
-date: "2025/12/06"
+author: "Suryash Chakravarty, Hooman Esteki, Bright Arafat Bello"
+date: "2025/12/12"
 jupyter: python3
 format: 
   html:
@@ -19,7 +19,7 @@ execute:
 editor: source
 ---
 
-GitHub URL: https://github.com/hoomanesteki/iris-ml-predictor
+GitHub URL: [https://github.com/hoomanesteki/iris-ml-predictor](https://github.com/hoomanesteki/iris-ml-predictor)
 
 ```{python}
 import pandas as pd
@@ -109,7 +109,3 @@ In order to elevate the model’s power and generalization:
 - Apply k-fold cross-validation to obtain a stability of results
 - Look into the importance of features and concentrates on misclassified samples
 - Consider the use of ensemble models as a means of improving robustness
-
-## References
-
-
