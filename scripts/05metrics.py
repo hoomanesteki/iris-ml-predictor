@@ -29,12 +29,31 @@ def main(test_data, model_from, metrics_to, plot_to):
 
     #load model
     model_path = os.path.join(model_from, "tree_model.pkl")
+    dummy_path = os.path.join(model_from, "dummy_model.pkl")
     with open(model_path, "rb") as f:
         model = pickle.load(f)
+    
+    with open(dummy_path, "rb") as f:
+        dummy = pickle.load(f)
 
     #load test data
     X_test = pd.read_csv(os.path.join(test_data, "X_test.csv"))
     y_test = pd.read_csv(os.path.join(test_data, "y_test.csv"))
+
+    X_train = pd.read_csv(os.path.join(test_data, "X_train.csv"))
+    y_train = pd.read_csv(os.path.join(test_data, "y_train.csv"))
+
+
+    #Dummy metrics on train data
+    labels = ['setosa','versicolor','virginica']
+    dummy_pred = dummy.predict(X_train)
+
+    dummy_report = classification_report(y_train, dummy_pred, output_dict=True) 
+    dummy_report_df = pd.DataFrame(dummy_report).transpose()
+    dummy_report_df.to_csv(os.path.join(metrics_to, "dummy_report_df.csv"),index=False)
+
+    cm_dummy = ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels=labels)
+    cm_dummy.figure_.savefig(os.path.join(plot_to, "dummy_confusion_matrix.png"), bbox_inches="tight")
 
     #make predictions on test data
     y_pred = model.predict(X_test)
