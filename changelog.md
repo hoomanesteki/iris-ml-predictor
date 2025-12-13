@@ -7,10 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Peer Review Feedback Addressed
 
--v4.0.0: Rendered all report files to Github Pages.
--v4.0.0: Added DummyClassifier results to the main report for easy comparison.
--v4.0.0: Added to CONTRIBUTING.md and CODE_OF_CODECT.md to include additional resources on how to contribute.
--v4.0.0: Set up docker-compose to output to specific port 8888.
+- v4.0.0: Rendered all report files to Github Pages.
+- v4.0.0: Added DummyClassifier results to the main report for easy comparison.
+- v4.0.0: Added to CONTRIBUTING.md and CODE_OF_CODECT.md to include additional resources on how to contribute.
+- v4.0.0: Set up docker-compose to output to specific port 8888.
 
 ### TA Feedback Addressed
 
