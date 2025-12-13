@@ -1,7 +1,7 @@
 .PHONY: all clean scratch cl build stop up run
 
 all:
-	make reports/index.html
+	make reports/reports/iris_report.html
 
 clean:
 	rm -f results/figures/*.png
@@ -36,9 +36,9 @@ scratch:
 		--plot_to=results/figures
 	quarto render reports/iris_report.qmd --to html
 	quarto render reports/iris_report.qmd --to typst
-	@echo "Output available at docs/"
+	@echo "Output available at reports/"
 
-reports/index.html: reports/iris_report.qmd \
+reports/reports/iris_report.html: reports/iris_report.qmd \
 			results/metrics/metrics_summary.csv \
 			results/figures/pairplot.png \
 			results/figures/corr.png \
@@ -46,7 +46,7 @@ reports/index.html: reports/iris_report.qmd \
 			results/figures/confusion_matrix.png
 	quarto render reports/iris_report.qmd --to html
 	quarto render reports/iris_report.qmd --to typst
-	@echo "Output available at docs/index.html"
+	@echo "Output available at reports/"
 
 results/metrics/metrics_summary.csv results/figures/confusion_matrix.png: scripts/05metrics.py \
 																	models/tree_model.pkl \
