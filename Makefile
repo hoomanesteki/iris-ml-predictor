@@ -85,7 +85,7 @@ cl:
 		-p linux-64 -p osx-64 -p osx-arm64 -p win-64 -p linux-aarch64
 
 build:
-	docker build -t esteki/iris-ml-predictor:latest --file Dockerfile .
+	docker build -t esteki/iris-ml-predictor:2.0.0 --file Dockerfile .
 
 stop:
 	docker-compose stop

@@ -1,5 +1,5 @@
 # Base image
-FROM condaforge/miniforge3:latest
+FROM condaforge/miniforge3:25.11.0-0
 
 # Ensure bash is default shell for conda activation
 SHELL ["/bin/bash", "-c"]
