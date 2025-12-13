@@ -19,3 +19,4 @@ reports/iris_report_files/
 # Raw and processed data (should always be generated, never stored)
 data/raw/
 data/processed/
+/.quarto/
