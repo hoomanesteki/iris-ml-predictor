@@ -24,7 +24,7 @@ To generate the report again, execute the entire workflow with:
 ```
 make all
 ```
-Once the pipeline is done, the processed HTML report will be found at: `reports/iris_report.html`
+Once the pipeline is done, the processed HTML report will be found at: `reports/reports/iris_report.html`
 
 The original Quarto document that was used to create the report is: `reports/iris_report.qmd`
 
@@ -77,14 +77,19 @@ make all
 ```
 
 All analysis steps in the right order will be executed and the final HTML report will be created at:
-`reports/iris_report.html`
+`reports/reports/iris_report.html`
 
-6. (Optional) If you want to get rid of all the generated files and bring back the project to a clean state, then run:
+6. To run the entire pipeline from scratch (including data download, model fitting, report generation), then run:
+```bash
+make scratch
+```
+
+7. (Optional) If you want to get rid of all the generated files and bring back the project to a clean state, then run:
 ```bash
 make clean
 ```
 
-7. Finally, to stop and remove Docker containers, do the following:
+8. Finally, to stop and remove Docker containers, do the following:
     In the terminal hit control + c, then run the following in the terminal;
 ```bash
 make stop
@@ -115,7 +120,7 @@ make all
 ```
 
 Upon completion of the pipeline, the finalized HTML report will be found in:
-`reports/iris_report.html`
+`reports/reports/iris_report.html`
 
 5. (Optional) Clean up all the created files and bring back the project to its original state by running:
 ```bash
