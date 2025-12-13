@@ -13,10 +13,10 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: c43f981dd41915abc9d48da0f5dc1b1d8fbb4c0293ab8f5b68f1727741ca78cd
-    osx-64: 89cb71a7b40682b25ddeee3698d0890c8d9f271405a33dbb42d9f81d9b1bfc9d
-    osx-arm64: 7f95603f40a69c3cf55fa20d05c33d9842e5b1b887353bdfb090c5b09f7cddac
-    win-64: ff61c1f48137ecacd49176f511247434275a87c7eb303acae519bcb76f6f28ac
+    linux-64: 6aa10a88a17eeae1ab76e18009a368727dd48e342bc7cdc409ea27fc407ba994
+    osx-64: 0efe9cd1bf0c5b2347ec496d99565ce548b62922bdbf2cdb53a184b25742d500
+    osx-arm64: 47960aa4b5537c01b8817d47bc8968ae662467cafec9c07c038d175a15c7e2f9
+    win-64: 44becc41e11e6c82f9cc0ee9c6a4aeec711b47217a96ac3e28e7d0cc5b32c616
     linux-aarch64: 089d5300986838bb9df432b799e01461584762ae4161e13a6380ae68c7c98915
   channels:
   - url: conda-forge
@@ -9331,10 +9331,10 @@ package:
     __glibc: '>=2.17,<3.0.a0'
     libcap: '>=2.77,<2.78.0a0'
     libgcc: '>=14'
-  url: https://conda.anaconda.org/conda-forge/linux-64/libsystemd0-257.10-hd0affe5_2.conda
+  url: https://conda.anaconda.org/conda-forge/linux-64/libsystemd0-257.10-hd0affe5_3.conda
   hash:
-    md5: b04e0a2163a72588a40cde1afd6f2d18
-    sha256: b30c06f60f03c2cf101afeb3452f48f12a2553b4cb631c9460c8a8ccf0813ae5
+    md5: 70d1de6301b58ed99fea01490a9802a3
+    sha256: b3a7f89462dc95c1bba9f663210d20ff3ac5f7db458684e0f3a7ae5784f8c132
   category: main
   optional: false
 - name: libtiff
@@ -13480,7 +13480,6 @@ package:
     libzlib: '>=1.3.1,<2.0a0'
     ncurses: '>=6.5,<7.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     readline: '>=8.2,<9.0a0'
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
@@ -13532,7 +13531,6 @@ package:
     libzlib: '>=1.3.1,<2.0a0'
     ncurses: '>=6.5,<7.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     readline: '>=8.2,<9.0a0'
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
@@ -13556,7 +13554,6 @@ package:
     libzlib: '>=1.3.1,<2.0a0'
     ncurses: '>=6.5,<7.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     readline: '>=8.2,<9.0a0'
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
@@ -13578,7 +13575,6 @@ package:
     libsqlite: '>=3.50.4,<4.0a0'
     libzlib: '>=1.3.1,<2.0a0'
     openssl: '>=3.5.4,<4.0a0'
-    pip: ''
     tk: '>=8.6.13,<8.7.0a0'
     tzdata: ''
     ucrt: '>=10.0.20348.0'
@@ -17024,10 +17020,10 @@ package:
   manager: conda
   platform: linux-64
   dependencies: {}
-  url: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h8577fbf_1.conda
   hash:
-    md5: 4222072737ccff51314b5ece9c7d6f5a
-    sha256: 5aaa366385d716557e365f0a4e9c3fca43ba196872abbbe3d56bb610d131e192
+    md5: e4e8496b68cf5f25e76fbe67f3856550
+    sha256: 865716d3e2ccaca1218462645830d2370ab075a9a118c238728e1231a234bc6c
   category: main
   optional: false
 - name: tzdata
@@ -17046,10 +17042,10 @@ package:
   manager: conda
   platform: osx-64
   dependencies: {}
-  url: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h8577fbf_1.conda
   hash:
-    md5: 4222072737ccff51314b5ece9c7d6f5a
-    sha256: 5aaa366385d716557e365f0a4e9c3fca43ba196872abbbe3d56bb610d131e192
+    md5: e4e8496b68cf5f25e76fbe67f3856550
+    sha256: 865716d3e2ccaca1218462645830d2370ab075a9a118c238728e1231a234bc6c
   category: main
   optional: false
 - name: tzdata
@@ -17057,10 +17053,10 @@ package:
   manager: conda
   platform: osx-arm64
   dependencies: {}
-  url: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h8577fbf_1.conda
   hash:
-    md5: 4222072737ccff51314b5ece9c7d6f5a
-    sha256: 5aaa366385d716557e365f0a4e9c3fca43ba196872abbbe3d56bb610d131e192
+    md5: e4e8496b68cf5f25e76fbe67f3856550
+    sha256: 865716d3e2ccaca1218462645830d2370ab075a9a118c238728e1231a234bc6c
   category: main
   optional: false
 - name: tzdata
@@ -17068,10 +17064,10 @@ package:
   manager: conda
   platform: win-64
   dependencies: {}
-  url: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h8577fbf_1.conda
   hash:
-    md5: 4222072737ccff51314b5ece9c7d6f5a
-    sha256: 5aaa366385d716557e365f0a4e9c3fca43ba196872abbbe3d56bb610d131e192
+    md5: e4e8496b68cf5f25e76fbe67f3856550
+    sha256: 865716d3e2ccaca1218462645830d2370ab075a9a118c238728e1231a234bc6c
   category: main
   optional: false
 - name: ucrt
@@ -18788,21 +18784,6 @@ package:
 - name: ipywidgets
   version: 8.1.8
   manager: pip
-  platform: linux-64
-  dependencies:
-    comm: '>=0.1.3'
-    ipython: '>=6.1.0'
-    jupyterlab-widgets: '>=3.0.15,<3.1.0'
-    traitlets: '>=4.3.1'
-    widgetsnbextension: '>=4.0.14,<4.1.0'
-  url: https://files.pythonhosted.org/packages/56/6d/0d9848617b9f753b87f214f1c682592f7ca42de085f564352f10f0843026/ipywidgets-8.1.8-py3-none-any.whl
-  hash:
-    sha256: ecaca67aed704a338f88f67b1181b58f821ab5dc89c1f0f5ef99db43c1c2921e
-  category: main
-  optional: false
-- name: ipywidgets
-  version: 8.1.8
-  manager: pip
   platform: linux-aarch64
   dependencies:
     comm: '>=0.1.3'
@@ -18813,67 +18794,6 @@ package:
   url: https://files.pythonhosted.org/packages/56/6d/0d9848617b9f753b87f214f1c682592f7ca42de085f564352f10f0843026/ipywidgets-8.1.8-py3-none-any.whl
   hash:
     sha256: ecaca67aed704a338f88f67b1181b58f821ab5dc89c1f0f5ef99db43c1c2921e
-  category: main
-  optional: false
-- name: ipywidgets
-  version: 8.1.8
-  manager: pip
-  platform: osx-64
-  dependencies:
-    comm: '>=0.1.3'
-    ipython: '>=6.1.0'
-    jupyterlab-widgets: '>=3.0.15,<3.1.0'
-    traitlets: '>=4.3.1'
-    widgetsnbextension: '>=4.0.14,<4.1.0'
-  url: https://files.pythonhosted.org/packages/56/6d/0d9848617b9f753b87f214f1c682592f7ca42de085f564352f10f0843026/ipywidgets-8.1.8-py3-none-any.whl
-  hash:
-    sha256: ecaca67aed704a338f88f67b1181b58f821ab5dc89c1f0f5ef99db43c1c2921e
-  category: main
-  optional: false
-- name: ipywidgets
-  version: 8.1.8
-  manager: pip
-  platform: osx-arm64
-  dependencies:
-    comm: '>=0.1.3'
-    ipython: '>=6.1.0'
-    jupyterlab-widgets: '>=3.0.15,<3.1.0'
-    traitlets: '>=4.3.1'
-    widgetsnbextension: '>=4.0.14,<4.1.0'
-  url: https://files.pythonhosted.org/packages/56/6d/0d9848617b9f753b87f214f1c682592f7ca42de085f564352f10f0843026/ipywidgets-8.1.8-py3-none-any.whl
-  hash:
-    sha256: ecaca67aed704a338f88f67b1181b58f821ab5dc89c1f0f5ef99db43c1c2921e
-  category: main
-  optional: false
-- name: ipywidgets
-  version: 8.1.8
-  manager: pip
-  platform: win-64
-  dependencies:
-    comm: '>=0.1.3'
-    ipython: '>=6.1.0'
-    jupyterlab-widgets: '>=3.0.15,<3.1.0'
-    traitlets: '>=4.3.1'
-    widgetsnbextension: '>=4.0.14,<4.1.0'
-  url: https://files.pythonhosted.org/packages/56/6d/0d9848617b9f753b87f214f1c682592f7ca42de085f564352f10f0843026/ipywidgets-8.1.8-py3-none-any.whl
-  hash:
-    sha256: ecaca67aed704a338f88f67b1181b58f821ab5dc89c1f0f5ef99db43c1c2921e
-  category: main
-  optional: false
-- name: jupyter
-  version: 1.1.1
-  manager: pip
-  platform: linux-64
-  dependencies:
-    ipykernel: '*'
-    ipywidgets: '*'
-    jupyter-console: '*'
-    jupyterlab: '*'
-    nbconvert: '*'
-    notebook: '*'
-  url: https://files.pythonhosted.org/packages/38/64/285f20a31679bf547b75602702f7800e74dbabae36ef324f716c02804753/jupyter-1.1.1-py2.py3-none-any.whl
-  hash:
-    sha256: 7a59533c22af65439b24bbe60373a4e95af8f16ac65a6c00820ad378e3f7cc83
   category: main
   optional: false
 - name: jupyter
@@ -18890,72 +18810,6 @@ package:
   url: https://files.pythonhosted.org/packages/38/64/285f20a31679bf547b75602702f7800e74dbabae36ef324f716c02804753/jupyter-1.1.1-py2.py3-none-any.whl
   hash:
     sha256: 7a59533c22af65439b24bbe60373a4e95af8f16ac65a6c00820ad378e3f7cc83
-  category: main
-  optional: false
-- name: jupyter
-  version: 1.1.1
-  manager: pip
-  platform: osx-64
-  dependencies:
-    ipykernel: '*'
-    ipywidgets: '*'
-    jupyter-console: '*'
-    jupyterlab: '*'
-    nbconvert: '*'
-    notebook: '*'
-  url: https://files.pythonhosted.org/packages/38/64/285f20a31679bf547b75602702f7800e74dbabae36ef324f716c02804753/jupyter-1.1.1-py2.py3-none-any.whl
-  hash:
-    sha256: 7a59533c22af65439b24bbe60373a4e95af8f16ac65a6c00820ad378e3f7cc83
-  category: main
-  optional: false
-- name: jupyter
-  version: 1.1.1
-  manager: pip
-  platform: osx-arm64
-  dependencies:
-    ipykernel: '*'
-    ipywidgets: '*'
-    jupyter-console: '*'
-    jupyterlab: '*'
-    nbconvert: '*'
-    notebook: '*'
-  url: https://files.pythonhosted.org/packages/38/64/285f20a31679bf547b75602702f7800e74dbabae36ef324f716c02804753/jupyter-1.1.1-py2.py3-none-any.whl
-  hash:
-    sha256: 7a59533c22af65439b24bbe60373a4e95af8f16ac65a6c00820ad378e3f7cc83
-  category: main
-  optional: false
-- name: jupyter
-  version: 1.1.1
-  manager: pip
-  platform: win-64
-  dependencies:
-    ipykernel: '*'
-    ipywidgets: '*'
-    jupyter-console: '*'
-    jupyterlab: '*'
-    nbconvert: '*'
-    notebook: '*'
-  url: https://files.pythonhosted.org/packages/38/64/285f20a31679bf547b75602702f7800e74dbabae36ef324f716c02804753/jupyter-1.1.1-py2.py3-none-any.whl
-  hash:
-    sha256: 7a59533c22af65439b24bbe60373a4e95af8f16ac65a6c00820ad378e3f7cc83
-  category: main
-  optional: false
-- name: jupyter-console
-  version: 6.6.3
-  manager: pip
-  platform: linux-64
-  dependencies:
-    ipykernel: '>=6.14'
-    ipython: '*'
-    jupyter-client: '>=7.0.0'
-    jupyter-core: '>=4.12,<5.0.dev0 || >=5.1.dev0'
-    prompt-toolkit: '>=3.0.30'
-    pygments: '*'
-    pyzmq: '>=17'
-    traitlets: '>=5.4'
-  url: https://files.pythonhosted.org/packages/ca/77/71d78d58f15c22db16328a476426f7ac4a60d3a5a7ba3b9627ee2f7903d4/jupyter_console-6.6.3-py3-none-any.whl
-  hash:
-    sha256: 309d33409fcc92ffdad25f0bcdf9a4a9daa61b6f341177570fdac03de5352485
   category: main
   optional: false
 - name: jupyter-console
@@ -18976,104 +18830,10 @@ package:
     sha256: 309d33409fcc92ffdad25f0bcdf9a4a9daa61b6f341177570fdac03de5352485
   category: main
   optional: false
-- name: jupyter-console
-  version: 6.6.3
-  manager: pip
-  platform: osx-64
-  dependencies:
-    ipykernel: '>=6.14'
-    ipython: '*'
-    jupyter-client: '>=7.0.0'
-    jupyter-core: '>=4.12,<5.0.dev0 || >=5.1.dev0'
-    prompt-toolkit: '>=3.0.30'
-    pygments: '*'
-    pyzmq: '>=17'
-    traitlets: '>=5.4'
-  url: https://files.pythonhosted.org/packages/ca/77/71d78d58f15c22db16328a476426f7ac4a60d3a5a7ba3b9627ee2f7903d4/jupyter_console-6.6.3-py3-none-any.whl
-  hash:
-    sha256: 309d33409fcc92ffdad25f0bcdf9a4a9daa61b6f341177570fdac03de5352485
-  category: main
-  optional: false
-- name: jupyter-console
-  version: 6.6.3
-  manager: pip
-  platform: osx-arm64
-  dependencies:
-    ipykernel: '>=6.14'
-    ipython: '*'
-    jupyter-client: '>=7.0.0'
-    jupyter-core: '>=4.12,<5.0.dev0 || >=5.1.dev0'
-    prompt-toolkit: '>=3.0.30'
-    pygments: '*'
-    pyzmq: '>=17'
-    traitlets: '>=5.4'
-  url: https://files.pythonhosted.org/packages/ca/77/71d78d58f15c22db16328a476426f7ac4a60d3a5a7ba3b9627ee2f7903d4/jupyter_console-6.6.3-py3-none-any.whl
-  hash:
-    sha256: 309d33409fcc92ffdad25f0bcdf9a4a9daa61b6f341177570fdac03de5352485
-  category: main
-  optional: false
-- name: jupyter-console
-  version: 6.6.3
-  manager: pip
-  platform: win-64
-  dependencies:
-    ipykernel: '>=6.14'
-    ipython: '*'
-    jupyter-client: '>=7.0.0'
-    jupyter-core: '>=4.12,<5.0.dev0 || >=5.1.dev0'
-    prompt-toolkit: '>=3.0.30'
-    pygments: '*'
-    pyzmq: '>=17'
-    traitlets: '>=5.4'
-  url: https://files.pythonhosted.org/packages/ca/77/71d78d58f15c22db16328a476426f7ac4a60d3a5a7ba3b9627ee2f7903d4/jupyter_console-6.6.3-py3-none-any.whl
-  hash:
-    sha256: 309d33409fcc92ffdad25f0bcdf9a4a9daa61b6f341177570fdac03de5352485
-  category: main
-  optional: false
-- name: jupyterlab-widgets
-  version: 3.0.16
-  manager: pip
-  platform: linux-64
-  dependencies: {}
-  url: https://files.pythonhosted.org/packages/ab/b5/36c712098e6191d1b4e349304ef73a8d06aed77e56ceaac8c0a306c7bda1/jupyterlab_widgets-3.0.16-py3-none-any.whl
-  hash:
-    sha256: 45fa36d9c6422cf2559198e4db481aa243c7a32d9926b500781c830c80f7ecf8
-  category: main
-  optional: false
 - name: jupyterlab-widgets
   version: 3.0.16
   manager: pip
   platform: linux-aarch64
-  dependencies: {}
-  url: https://files.pythonhosted.org/packages/ab/b5/36c712098e6191d1b4e349304ef73a8d06aed77e56ceaac8c0a306c7bda1/jupyterlab_widgets-3.0.16-py3-none-any.whl
-  hash:
-    sha256: 45fa36d9c6422cf2559198e4db481aa243c7a32d9926b500781c830c80f7ecf8
-  category: main
-  optional: false
-- name: jupyterlab-widgets
-  version: 3.0.16
-  manager: pip
-  platform: osx-64
-  dependencies: {}
-  url: https://files.pythonhosted.org/packages/ab/b5/36c712098e6191d1b4e349304ef73a8d06aed77e56ceaac8c0a306c7bda1/jupyterlab_widgets-3.0.16-py3-none-any.whl
-  hash:
-    sha256: 45fa36d9c6422cf2559198e4db481aa243c7a32d9926b500781c830c80f7ecf8
-  category: main
-  optional: false
-- name: jupyterlab-widgets
-  version: 3.0.16
-  manager: pip
-  platform: osx-arm64
-  dependencies: {}
-  url: https://files.pythonhosted.org/packages/ab/b5/36c712098e6191d1b4e349304ef73a8d06aed77e56ceaac8c0a306c7bda1/jupyterlab_widgets-3.0.16-py3-none-any.whl
-  hash:
-    sha256: 45fa36d9c6422cf2559198e4db481aa243c7a32d9926b500781c830c80f7ecf8
-  category: main
-  optional: false
-- name: jupyterlab-widgets
-  version: 3.0.16
-  manager: pip
-  platform: win-64
   dependencies: {}
   url: https://files.pythonhosted.org/packages/ab/b5/36c712098e6191d1b4e349304ef73a8d06aed77e56ceaac8c0a306c7bda1/jupyterlab_widgets-3.0.16-py3-none-any.whl
   hash:
@@ -19133,103 +18893,7 @@ package:
 - name: nbconvert
   version: 7.16.6
   manager: pip
-  platform: linux-64
-  dependencies:
-    beautifulsoup4: '*'
-    bleach: '!=5.0.0'
-    defusedxml: '*'
-    jinja2: '>=3.0'
-    jupyter-core: '>=4.7'
-    jupyterlab-pygments: '*'
-    markupsafe: '>=2.0'
-    mistune: '>=2.0.3,<4'
-    nbclient: '>=0.5.0'
-    nbformat: '>=5.7'
-    packaging: '*'
-    pandocfilters: '>=1.4.1'
-    pygments: '>=2.4.1'
-    traitlets: '>=5.1'
-  url: https://files.pythonhosted.org/packages/cc/9a/cd673b2f773a12c992f41309ef81b99da1690426bd2f96957a7ade0d3ed7/nbconvert-7.16.6-py3-none-any.whl
-  hash:
-    sha256: 1375a7b67e0c2883678c48e506dc320febb57685e5ee67faa51b18a90f3a712b
-  category: main
-  optional: false
-- name: nbconvert
-  version: 7.16.6
-  manager: pip
   platform: linux-aarch64
-  dependencies:
-    beautifulsoup4: '*'
-    bleach: '!=5.0.0'
-    defusedxml: '*'
-    jinja2: '>=3.0'
-    jupyter-core: '>=4.7'
-    jupyterlab-pygments: '*'
-    markupsafe: '>=2.0'
-    mistune: '>=2.0.3,<4'
-    nbclient: '>=0.5.0'
-    nbformat: '>=5.7'
-    packaging: '*'
-    pandocfilters: '>=1.4.1'
-    pygments: '>=2.4.1'
-    traitlets: '>=5.1'
-  url: https://files.pythonhosted.org/packages/cc/9a/cd673b2f773a12c992f41309ef81b99da1690426bd2f96957a7ade0d3ed7/nbconvert-7.16.6-py3-none-any.whl
-  hash:
-    sha256: 1375a7b67e0c2883678c48e506dc320febb57685e5ee67faa51b18a90f3a712b
-  category: main
-  optional: false
-- name: nbconvert
-  version: 7.16.6
-  manager: pip
-  platform: osx-64
-  dependencies:
-    beautifulsoup4: '*'
-    bleach: '!=5.0.0'
-    defusedxml: '*'
-    jinja2: '>=3.0'
-    jupyter-core: '>=4.7'
-    jupyterlab-pygments: '*'
-    markupsafe: '>=2.0'
-    mistune: '>=2.0.3,<4'
-    nbclient: '>=0.5.0'
-    nbformat: '>=5.7'
-    packaging: '*'
-    pandocfilters: '>=1.4.1'
-    pygments: '>=2.4.1'
-    traitlets: '>=5.1'
-  url: https://files.pythonhosted.org/packages/cc/9a/cd673b2f773a12c992f41309ef81b99da1690426bd2f96957a7ade0d3ed7/nbconvert-7.16.6-py3-none-any.whl
-  hash:
-    sha256: 1375a7b67e0c2883678c48e506dc320febb57685e5ee67faa51b18a90f3a712b
-  category: main
-  optional: false
-- name: nbconvert
-  version: 7.16.6
-  manager: pip
-  platform: osx-arm64
-  dependencies:
-    beautifulsoup4: '*'
-    bleach: '!=5.0.0'
-    defusedxml: '*'
-    jinja2: '>=3.0'
-    jupyter-core: '>=4.7'
-    jupyterlab-pygments: '*'
-    markupsafe: '>=2.0'
-    mistune: '>=2.0.3,<4'
-    nbclient: '>=0.5.0'
-    nbformat: '>=5.7'
-    packaging: '*'
-    pandocfilters: '>=1.4.1'
-    pygments: '>=2.4.1'
-    traitlets: '>=5.1'
-  url: https://files.pythonhosted.org/packages/cc/9a/cd673b2f773a12c992f41309ef81b99da1690426bd2f96957a7ade0d3ed7/nbconvert-7.16.6-py3-none-any.whl
-  hash:
-    sha256: 1375a7b67e0c2883678c48e506dc320febb57685e5ee67faa51b18a90f3a712b
-  category: main
-  optional: false
-- name: nbconvert
-  version: 7.16.6
-  manager: pip
-  platform: win-64
   dependencies:
     beautifulsoup4: '*'
     bleach: '!=5.0.0'
@@ -19328,19 +18992,6 @@ package:
 - name: quarto-cli
   version: 1.8.26
   manager: pip
-  platform: linux-64
-  dependencies:
-    jupyter: '*'
-    nbclient: '*'
-    wheel: '*'
-  url: https://files.pythonhosted.org/packages/a4/20/3c6d3784b06be0f4bcbcac16ca8b23d4c7d3643b64a63f7e3326bc423b55/quarto_cli-1.8.26.tar.gz
-  hash:
-    sha256: 2d9eec00822dbc86145a09bae6f33776f8235eb1d5c5c011116dacc9f7218043
-  category: main
-  optional: false
-- name: quarto-cli
-  version: 1.8.26
-  manager: pip
   platform: linux-aarch64
   dependencies:
     jupyter: '*'
@@ -19351,93 +19002,10 @@ package:
     sha256: 2d9eec00822dbc86145a09bae6f33776f8235eb1d5c5c011116dacc9f7218043
   category: main
   optional: false
-- name: quarto-cli
-  version: 1.8.26
-  manager: pip
-  platform: osx-64
-  dependencies:
-    jupyter: '*'
-    nbclient: '*'
-    wheel: '*'
-  url: https://files.pythonhosted.org/packages/a4/20/3c6d3784b06be0f4bcbcac16ca8b23d4c7d3643b64a63f7e3326bc423b55/quarto_cli-1.8.26.tar.gz
-  hash:
-    sha256: 2d9eec00822dbc86145a09bae6f33776f8235eb1d5c5c011116dacc9f7218043
-  category: main
-  optional: false
-- name: quarto-cli
-  version: 1.8.26
-  manager: pip
-  platform: osx-arm64
-  dependencies:
-    jupyter: '*'
-    nbclient: '*'
-    wheel: '*'
-  url: https://files.pythonhosted.org/packages/a4/20/3c6d3784b06be0f4bcbcac16ca8b23d4c7d3643b64a63f7e3326bc423b55/quarto_cli-1.8.26.tar.gz
-  hash:
-    sha256: 2d9eec00822dbc86145a09bae6f33776f8235eb1d5c5c011116dacc9f7218043
-  category: main
-  optional: false
-- name: quarto-cli
-  version: 1.8.26
-  manager: pip
-  platform: win-64
-  dependencies:
-    jupyter: '*'
-    nbclient: '*'
-    wheel: '*'
-  url: https://files.pythonhosted.org/packages/a4/20/3c6d3784b06be0f4bcbcac16ca8b23d4c7d3643b64a63f7e3326bc423b55/quarto_cli-1.8.26.tar.gz
-  hash:
-    sha256: 2d9eec00822dbc86145a09bae6f33776f8235eb1d5c5c011116dacc9f7218043
-  category: main
-  optional: false
-- name: tinycss2
-  version: 1.4.0
-  manager: pip
-  platform: linux-64
-  dependencies:
-    webencodings: '>=0.4'
-  url: https://files.pythonhosted.org/packages/e6/34/ebdc18bae6aa14fbee1a08b63c015c72b64868ff7dae68808ab500c492e2/tinycss2-1.4.0-py3-none-any.whl
-  hash:
-    sha256: 3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289
-  category: main
-  optional: false
 - name: tinycss2
   version: 1.4.0
   manager: pip
   platform: linux-aarch64
-  dependencies:
-    webencodings: '>=0.4'
-  url: https://files.pythonhosted.org/packages/e6/34/ebdc18bae6aa14fbee1a08b63c015c72b64868ff7dae68808ab500c492e2/tinycss2-1.4.0-py3-none-any.whl
-  hash:
-    sha256: 3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289
-  category: main
-  optional: false
-- name: tinycss2
-  version: 1.4.0
-  manager: pip
-  platform: osx-64
-  dependencies:
-    webencodings: '>=0.4'
-  url: https://files.pythonhosted.org/packages/e6/34/ebdc18bae6aa14fbee1a08b63c015c72b64868ff7dae68808ab500c492e2/tinycss2-1.4.0-py3-none-any.whl
-  hash:
-    sha256: 3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289
-  category: main
-  optional: false
-- name: tinycss2
-  version: 1.4.0
-  manager: pip
-  platform: osx-arm64
-  dependencies:
-    webencodings: '>=0.4'
-  url: https://files.pythonhosted.org/packages/e6/34/ebdc18bae6aa14fbee1a08b63c015c72b64868ff7dae68808ab500c492e2/tinycss2-1.4.0-py3-none-any.whl
-  hash:
-    sha256: 3a49cf47b7675da0b15d0c6e1df8df4ebd96e9394bb905a5775adb0d884c5289
-  category: main
-  optional: false
-- name: tinycss2
-  version: 1.4.0
-  manager: pip
-  platform: win-64
   dependencies:
     webencodings: '>=0.4'
   url: https://files.pythonhosted.org/packages/e6/34/ebdc18bae6aa14fbee1a08b63c015c72b64868ff7dae68808ab500c492e2/tinycss2-1.4.0-py3-none-any.whl
@@ -19498,47 +19066,7 @@ package:
 - name: widgetsnbextension
   version: 4.0.15
   manager: pip
-  platform: linux-64
-  dependencies: {}
-  url: https://files.pythonhosted.org/packages/3f/0e/fa3b193432cfc60c93b42f3be03365f5f909d2b3ea410295cf36df739e31/widgetsnbextension-4.0.15-py3-none-any.whl
-  hash:
-    sha256: 8156704e4346a571d9ce73b84bee86a29906c9abfd7223b7228a28899ccf3366
-  category: main
-  optional: false
-- name: widgetsnbextension
-  version: 4.0.15
-  manager: pip
   platform: linux-aarch64
-  dependencies: {}
-  url: https://files.pythonhosted.org/packages/3f/0e/fa3b193432cfc60c93b42f3be03365f5f909d2b3ea410295cf36df739e31/widgetsnbextension-4.0.15-py3-none-any.whl
-  hash:
-    sha256: 8156704e4346a571d9ce73b84bee86a29906c9abfd7223b7228a28899ccf3366
-  category: main
-  optional: false
-- name: widgetsnbextension
-  version: 4.0.15
-  manager: pip
-  platform: osx-64
-  dependencies: {}
-  url: https://files.pythonhosted.org/packages/3f/0e/fa3b193432cfc60c93b42f3be03365f5f909d2b3ea410295cf36df739e31/widgetsnbextension-4.0.15-py3-none-any.whl
-  hash:
-    sha256: 8156704e4346a571d9ce73b84bee86a29906c9abfd7223b7228a28899ccf3366
-  category: main
-  optional: false
-- name: widgetsnbextension
-  version: 4.0.15
-  manager: pip
-  platform: osx-arm64
-  dependencies: {}
-  url: https://files.pythonhosted.org/packages/3f/0e/fa3b193432cfc60c93b42f3be03365f5f909d2b3ea410295cf36df739e31/widgetsnbextension-4.0.15-py3-none-any.whl
-  hash:
-    sha256: 8156704e4346a571d9ce73b84bee86a29906c9abfd7223b7228a28899ccf3366
-  category: main
-  optional: false
-- name: widgetsnbextension
-  version: 4.0.15
-  manager: pip
-  platform: win-64
   dependencies: {}
   url: https://files.pythonhosted.org/packages/3f/0e/fa3b193432cfc60c93b42f3be03365f5f909d2b3ea410295cf36df739e31/widgetsnbextension-4.0.15-py3-none-any.whl
   hash:
