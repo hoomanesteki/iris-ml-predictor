@@ -3,6 +3,7 @@ from sklearn.tree import DecisionTreeClassifier
 import pickle
 import os
 import click
+from sklearn.dummy import DummyClassifier
 
 def create_dir_if_not_exists(directory):
         os.makedirs(directory, exist_ok=True)
@@ -12,6 +13,11 @@ def train_model(X, y, seed):
         model = DecisionTreeClassifier(max_depth=3, random_state=seed)
         model.fit(X, y)
         return model
+
+def train_dummy(X, y, seed):
+        dummy = DummyClassifier(strategy='most_frequent',random_state=seed)
+        dummy.fit(X, y)
+        return dummy
 
 @click.command()
 @click.option('--training_data', type=str, help="Path to directory containing training data")
@@ -37,10 +43,14 @@ def main(training_data, model_to, seed):
         #Create model object and fit to data
         tree = train_model(X_train, y_train, seed=seed)
         
+        dummy = train_dummy(X_train,y_train,seed)
 
         #save model object as .pkl file and export to directory
         with open(os.path.join(model_to, "tree_model.pkl"), "wb") as f:
                 pickle.dump(tree, f)
+        
+        with open(os.path.join(model_to, "dummy_model.pkl"), "wb") as f:
+                pickle.dump(dummy, f)
 
 if __name__ == '__main__':
         main() 
