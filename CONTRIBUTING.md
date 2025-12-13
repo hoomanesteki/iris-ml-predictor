@@ -11,7 +11,8 @@ Small typos or grammatical errors in documentation may be edited directly using 
 1. Start by Forking the repository to your own GitHub account, and then clone it to your local machine. For more details on forking, visit the github documentation: https://help.github.com/en/articles/fork-a-repo
     To clone the repository, use the following command:
     ```
-    git clone https://github.com/YOUR-USERNAME/iris-ml-predictor.git
+    git clone https://github.com/hoomanesteki/iris-ml-predictor.git
+    cd iris-ml-predictor
     ```
 2. Initialise a new virtual environment based on your preferred tool, using our environment.yml file:
     ```
@@ -41,6 +42,6 @@ By participating in this project you agree to abide by these terms.
 
 ## Attribution
 
-These contributing guidelines were adapted from the dplyr contributing guidelines, found here -->https://github.com/tidyverse/dplyr/blob/main/.github/CONTRIBUTING.md.
+These contributing guidelines were adapted from the dplyr contributing guidelines, found here --> https://github.com/tidyverse/dplyr/blob/main/.github/CONTRIBUTING.md.
 
 and the breast-cancer-predictor repository, found here --> https://github.com/ttimbers/breast-cancer-predictor/blob/0.0.1/CONTRIBUTING.md
