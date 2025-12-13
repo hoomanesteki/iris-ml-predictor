@@ -15,7 +15,7 @@ def train_model(X, y, seed):
         return model
 
 def train_dummy(X, y, seed):
-        dummy = DummyClassifier(strategy='most_frequent',random_state=seed)
+        dummy = DummyClassifier(strategy='stratified',random_state=seed)
         dummy.fit(X, y)
         return dummy
 
@@ -26,7 +26,10 @@ def train_dummy(X, y, seed):
 
 def main(training_data, model_to, seed):
         '''
-        Fits a Decision Tree Classifier object onto the training dataset of iris_csv
+        Fits a Decision Tree Classifier and a DummyClassifier
+        onto the training dataset.
+
+        The dummy model serves as a baseline.
         
         :param training_data: Path to directory containing training data
         :param model_to: path to directory where model object will be saved
@@ -38,7 +41,7 @@ def main(training_data, model_to, seed):
 
         #load the data
         X_train = pd.read_csv(os.path.join(training_data, "X_train.csv"))
-        y_train = pd.read_csv(os.path.join(training_data, "y_train.csv"))
+        y_train = pd.read_csv(os.path.join(training_data, "y_train.csv")).squeeze()
 
         #Create model object and fit to data
         tree = train_model(X_train, y_train, seed=seed)

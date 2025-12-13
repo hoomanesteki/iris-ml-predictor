@@ -71,7 +71,19 @@ The visualizations indicate that *setosa* is completely isolated from the remain
 
 ### Model Building
 
-A DummyClassifier (actually a classifier with no intelligence at all) was employed as a reference point for the performance comparison (nearly 33% correct predictions for the three equally balanced classes). Subsequently, a Decision Tree Classifier was fitted to capture the nonlinear patterns through the four input features.
+A DummyClassifier (actually a classifier with no intelligence at all) was employed as a reference point for the performance comparison. 
+```{python}
+#| label: dummy-metrics
+#| tbl-cap: Dummy Classifier Performance Metrics
+dummy_metrics = pd.read_csv("results/metrics/dummy_report_df.csv")
+dummy_accuracy = round(dummy_metrics.iloc[0,1] * 100, 2)
+```
+
+![Confusion matrix](results/figures/dummy_confusion_matrix.png){#fig-dum_conf width=70%}
+
+We observed nearly `{python} dummy_accuracy`% correct predictions for the three equally balanced classes.
+
+Subsequently, a Decision Tree Classifier was fitted to capture the nonlinear patterns through the four input features.
 
 ```{python}
 #| label: tbl-metrics

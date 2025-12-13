@@ -48,12 +48,13 @@ def main(test_data, model_from, metrics_to, plot_to):
     labels = ['setosa','versicolor','virginica']
     dummy_pred = dummy.predict(X_train)
 
-    dummy_report = classification_report(y_train, dummy_pred, output_dict=True) 
+    dummy_report = classification_report(y_train, dummy_pred, output_dict=True, zero_division=0) 
     dummy_report_df = pd.DataFrame(dummy_report).transpose()
     dummy_report_df.to_csv(os.path.join(metrics_to, "dummy_report_df.csv"),index=False)
 
-    cm_dummy = ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels=labels)
+    cm_dummy = ConfusionMatrixDisplay.from_predictions(y_train, dummy_pred, display_labels=labels)
     cm_dummy.figure_.savefig(os.path.join(plot_to, "dummy_confusion_matrix.png"), bbox_inches="tight")
+    
 
     #make predictions on test data
     y_pred = model.predict(X_test)
