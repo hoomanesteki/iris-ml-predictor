@@ -34,8 +34,7 @@ scratch:
 		--model_from=results/models \
 		--metrics_to=results/metrics \
 		--plot_to=results/figures
-	quarto render reports/iris_report.qmd --to html
-	quarto render reports/iris_report.qmd --to typst
+	quarto render reports/iris_report.qmd
 	@echo "Output available at reports/"
 
 reports/reports/iris_report.html: reports/iris_report.qmd \
@@ -44,8 +43,7 @@ reports/reports/iris_report.html: reports/iris_report.qmd \
 			results/figures/corr.png \
 			results/figures/histplot.png \
 			results/figures/confusion_matrix.png
-	quarto render reports/iris_report.qmd --to html
-	quarto render reports/iris_report.qmd --to typst
+	quarto render reports/iris_report.qmd
 	@echo "Output available at reports/"
 
 results/metrics/metrics_summary.csv results/figures/confusion_matrix.png: scripts/05metrics.py \

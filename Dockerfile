@@ -26,9 +26,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     mkdir -p /opt/quarto && \
     tar -xzf quarto-${QUARTO_VERSION}-linux-${QUARTO_ARCH}.tar.gz -C /opt/quarto --strip-components=1 && \
     rm quarto-${QUARTO_VERSION}-linux-${QUARTO_ARCH}.tar.gz && \
-    ln -s /opt/quarto/bin/quarto /usr/local/bin/quarto && \
-    # Clean up quarto installation files we don't need
-    rm -rf /opt/quarto/share/jupyter
+    ln -s /opt/quarto/bin/quarto /usr/local/bin/quarto
 
 # Copy repository contents (includes conda-lock.yml)
 COPY conda-lock.yml .
